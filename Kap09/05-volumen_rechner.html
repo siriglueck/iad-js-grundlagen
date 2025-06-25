@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Event: onclick</title>
+	<link rel="stylesheet" href="../css/style.min.css">
+	<script type="text/javascript" src="js/volumen_rechner.js"></script>
+</head>
+
+<body>
+	<h3>Volumenmaße berechnen</h3>
+	<form id="Volumen">
+		<p><input name="eingabewert" size="6" maxlength="5"></p>
+		<p>
+			<select name="einheit">
+				<option value="cmm">mm&sup3;</option>
+				<option value="ccm">cm&sup3;</option>
+				<option value="cdm">dm&sup3;</option>
+				<option value="cm">m&sup3;</option>
+				<option value="l" selected>l (Liter)</option>
+				<option value="hl">hl (Hektoliter)</option>
+			</select>
+		</p>
+		<hr>
+		<input type="button" id="los" value="Umrechnen">
+		<hr>
+		<p>
+			<input name="cmm" readonly>
+			mm&sup3;
+		</p>
+		
+		<p>
+			<input type="text" name="ccm" readonly>
+			cm&sup3;
+		</p>
+		
+		<p>
+			<input type="text" name="cdm" readonly>
+			dm&sup3;
+		</p>
+		
+		<p>
+			<input type="text" name="cm" readonly>
+			m&sup3;
+		</p>
+		
+		<p>
+			<input type="text" name="liter" readonly>
+			l (Liter)
+		</p>
+		
+		<p>
+			<input type="text" name="hektoliter" readonly>
+			hl (Hektoliter)
+		</p>
+	</form>
+</body>
+
+</html>

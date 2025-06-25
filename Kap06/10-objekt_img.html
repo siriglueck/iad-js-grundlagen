@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt Image</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h2>Arbeit mit Bildern</h2>
+  <img id="bild">
+  <script>
+
+    bild = new Image();
+    bild.src = 'bild.jpg';
+    bild.width = 100;
+    bild.alt = "Grogu";
+
+    document.querySelector("#bild").src = bild.src;
+    document.querySelector("#bild").width = bild.width;
+    document.querySelector("#bild").alt = bild.alt;
+
+  </script>
+</body>
+
+</html>

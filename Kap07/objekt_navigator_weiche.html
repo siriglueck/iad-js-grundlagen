@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Browserweiche</title>
+	<link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+	<h3>Browserweiche</h3>
+	<p>Dieses Skript dient zum Ermitteln des vom Nutzer verwendeten Browsers.</p>
+	<p>
+		Um zu ermitteln, welchen Browser der Besucher der Webseite verwendet, wurde früher oft der Wert der Eigenschaft
+		<code>appName</code> überprüft.
+	</p>
+	<p>
+		Durch die Vereinheitlichung der Angaben für diese Eigenschaft kann man in neuen Browsern diesen Weg nicht mehr
+		zuverlässig gehen. Stattdessen nutzt man <code>userAgent</code> und/oder die weiteren Eigenschaften, die aber sehr
+		aufwändig ausgewertet werden müssen, um einen Browser wirklich zu erkennen.
+	</p>
+	<p>
+		Deshalb nutzt man in der Praxis durchaus noch die alten Browsererkennungen und nimmt in Kauf, dass man
+		beispielsweise den neuen Internet Explorer als Mozilla-Browser einordnet. Da dieser aber standardkonform ist, ist
+		das kein wirkliches Problem. Man will damit in der Regel nur alte Versionen vom Internet Explorer identifizieren, um
+		diesen eine individuelle Webseite vorzusetzen.
+	</p>
+	<p>
+		<script>
+
+			if (parseInt(navigator.appVersion) >= 4) {
+				if (navigator.appName == "Netscape") {
+					document.write("Sie verwenden einen auf Netscape basierenden Browser.");
+				}
+				else if (navigator.appName.indexOf("Internet Explorer") != -1) {
+					document.write("Sie verwenden den Internet Explorer in einer alten Version.");
+
+				}
+
+				else {
+					document.write("Sie verwenden einen anderen Browser.");
+				}
+			}
+			else {
+				document.writwe("Sie verwenden einen älteren Browser.");
+			}
+
+			console.log(navigator.appName);
+
+		</script>
+	</p>
+</body>
+
+</html>

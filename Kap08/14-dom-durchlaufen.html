@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM durchlaufen</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    function knoten(verweis, ebene) {
+      for (let i = 0; i < verweis.childNodes.length; i++) {
+        // aktueller Kindknoten wird gespeichert
+        const ch = verweis.childNodes[i];
+        // Ausgabe-Div in Variable abgelegt
+        const ausgabe = document.querySelector("#ausgabe");
+
+        // Prüfung ob es sich bei dem Knoten um einen Text- oder HTML-Elementknoten handelt
+        if (ch.nodeType == 3) { // Typ 3 = Textknoten
+          ausgabe.innerHTML += "Ebene: " + ebene + ", Textwert: " + ch.nodeValue + "<br>";
+        } else if (ch.nodeType == 1) { // Typ 1 = Elementknoten
+          ausgabe.innerHTML += "Ebene: " + ebene + ", Elementname: " + ch.nodeName + "<br>";
+        }
+
+        // Prüfe ob die Elemente der aktuellen Ebene weitere Kinder besitzen
+        if (ch.hasChildNodes()) {
+          // Wenn ja, Ebenen-Index erhöhen
+          ebene++;
+          // rekursiver Aufruf der Funktion
+          knoten(ch, ebene);
+          // hier wird erst weiter gemacht, wenn alle Rekursionen durchlaufen sind!
+
+          // Ebenen-Index wieder auf vorherigen Wert zurücksetzen
+          ebene--;
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>DOM durchlaufen</h1>
+  <p id="idAbsatz">
+    Das
+    <span style="font-style:italic;">ist</span>
+    ein Absatz
+    <span style="font-weight:bold;">
+      mit Markierungen
+      <span style="font-style:italic;">
+        auf mehreren
+      </span>
+    </span>
+    Ebenen.
+  </p>
+
+  <div id="ausgabe"></div>
+
+  <script>
+    knoten(document.querySelector("#idAbsatz"), 1);
+  </script>
+</body>
+
+</html>

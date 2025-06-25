@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erweiterte Geolocation-Angaben</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script src="js/functions.js"></script>
+</head>
+
+<body>
+  <h1>Erweiterte Geolocation-Angaben</h1>
+
+  <div id="ausgabe"></div>
+
+  <script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", () => {
+      const ausgabe = document.querySelector("#ausgabe");
+      if (navigator.geolocation) {
+        let options = { enableHighAccuracy: true };
+        navigator.geolocation.getCurrentPosition(showPosition, showError, options);
+      } else {
+        ausgabe.innerHTML = "Ihr Browser unterstützt die W3C Geolocation API nicht.";
+      }
+
+      function showPosition(position) {
+        ausgabe.innerHTML = "Die Geoposition dieses Gerätes (Stand: "
+          + new Date(position.timestamp).toLocaleTimeString() + "):<br>"
+          + "Breitengrad: " + position.coords.latitude + "°<br>"
+          + "Längengrad: " + position.coords.longitude + "°<br>"
+          + "Genauigkeit: " + position.coords.accuracy + 'm<br>';
+
+        if (position.coords.altitude) {
+          ausgabe.innerHTML += "Höhe: " + position.coords.altitude + "m<br>"
+            + "Genauigkeit: " + position.coords.altitudeAccuracy + "m";
+        }
+      }
+
+      function showError(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            ausgabe.innerHTML = "Sie haben die Abfrage ihrer Geoposition untersagt.";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            ausgabe.innerHTML = "Es sind keine Geopositions-Daten verfügbar";
+            break;
+          case error.TIMEOUT:
+            ausgabe.innerHTML = "Das Timeout für die Ortsabfrage wurde überschritten.";
+            break;
+          default:
+            ausgabe.innerHTML = errorHandler();
+        }
+      }
+    });
+    window.addEventListener("error", errorHandler);
+  </script>
+</body>
+
+</html>

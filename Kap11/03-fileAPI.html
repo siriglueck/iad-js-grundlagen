@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileAPI</title>
+    <link rel="stylesheet" href="../css/style.min.css">
+</head>
+<body>
+    <h1>FileAPI</h1>
+
+    <div>
+        <input type="file" name="chooseFile" id="chooseFile">
+        <button id="showFile">Datei anzeigen</button>
+    </div>
+    <div>
+        <iframe id="iframe" width="500" height="500"></iframe>
+    </div>
+    <script>
+        function saveFile(file) {
+            // neue Instanz der FileReader-Klasse erstellen
+            // die FileReader-Klasse arbeitet asynchron
+            const fileReader = new FileReader();
+
+            // das onload-Event wird ausgelöst, sobald die Datei fertig eingelesen ist
+            fileReader.onload = function(event) {
+                // Data-URL-String (in event.target.result abgerufen) wird mittels Web Storage API in das localStorage-Objekt gespeichert
+                localStorage.setItem("myFile", event.target.result);
+            }
+
+            // starten des asynchronen Vorgangs zum Einlesen der Datei
+            fileReader.readAsDataURL(file);
+        }
+
+        function showFile() {
+            // Auslesen des gespeicherten Inhalts und splitten in den Content-Type und den eigentlichen Inhalt
+            let fileAsDataUrl = localStorage.getItem("myFile");
+            let fileData = fileAsDataUrl.split(",");
+            let contentType;
+            let uInt8Array;
+            let fileAsBlob;
+
+            // atob-Methode dekodiert den base64-kodierten Datei-Inhalt
+            fileAsDataUrl = window.atob(fileData[1]);
+
+            // Content-Type anpassen (Mittelteil extrahieren, der den wirklichen Content-Type enthält)
+            contentType = (fileData[0].split(":")[1].split(";")[0]);
+
+            // Instanzder Uint8Array-Klasse (Array aus 8-Bit-Ganzzahlen) erstellen ...
+            uInt8Array = new Uint8Array(fileAsDataUrl.length);
+
+            // ... und füllen dieses Objekt
+            for(let i = 0; i < fileAsDataUrl.length; i++) {
+                uInt8Array[i] = fileAsDataUrl.charCodeAt(i);
+            }
+
+            // Dateiinhalt in Blob Binary Large Object umwandeln
+            fileAsBlob = new Blob([uInt8Array], { 'type': contentType });
+
+            // mittels window.URL.createObjectURL-Methode spezielle Objekt-URL generieren
+            document.querySelector("#iframe").src = window.URL.createObjectURL(fileAsBlob);
+        }
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            // Event-Handler für das change-Event des chooseFile-Elements erstellen
+            document.getElementById("chooseFile").addEventListener("change", function(){
+                saveFile(this.files[0]);
+            });
+
+            // Event-Handler für das click-Event der showFile-Schaltfläche erstellen
+            document.querySelector("#showFile").addEventListener("click", showFile);
+        });
+    </script>
+</body>
+</html>

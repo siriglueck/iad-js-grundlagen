@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt Date</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3> Die aktuelle Uhrzeit</h3>
+  <script>
+    let zeit = new Date(); // Variable mit aktuellem Datum und Uhrzeit initialisieren
+    document.write("Datum, Uhrzeit: " + zeit.toLocaleString() + " Minuten<br>");
+    document.write("Jahr: " + zeit.getFullYear() + "; ");
+    document.write("Monat: " + zeit.getMonth() + "; "); /* Monate 0...11 */
+    document.write("Tag: " + zeit.getDate() + "; ");
+    document.write("Wochentag: " + zeit.getDay() + "; ");
+    document.write("Stunden: " + zeit.getHours() + "; ");
+    document.write("Minuten: " + zeit.getMinutes() + "; ");
+    document.write("Sekunden: " + zeit.getSeconds() + "<br> ");
+    document.write("Greenwichzeit: " + zeit.toGMTString() + "<br>");
+    document.write("Lokale Ausgabe: " + zeit.toLocaleString() + "<br>");
+    document.write("Abweichung: " + zeit.getTimezoneOffset() + " Minuten<br>");
+
+    jahr = zeit.getFullYear();
+    monat = zeit.getMonth() + 1;
+    tag = zeit.getDate();
+
+    document.write("Heute ist der " + tag + "." + monat + "." + jahr + "<br>");
+
+    dann = zeit.getTime() + (150 * 24 * 60 * 60 * 1000); // 150 Tage in Millisekunden umrechnen
+
+    /* Zeit auf neues Datum (+150 Tage) setzen */
+    zeit.setTime(dann);
+    document.write("In 150 Tagen ist " + zeit.toLocaleString() + "<br>");
+
+  </script>
+</body>
+
+</html>

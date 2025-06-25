@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+  <title>Math-Objekt</title>
+</head>
+
+<body>
+  <h2>Mathematische Funktionen</h2>
+  <table summary="Übersicht der mathematischen Funktionen" id="zellen">
+    <tr>
+      <td width="15%">Methode</td>
+      <td width="30%">Bedeutung</td>
+      <td width="15%">Wertebereich</td>
+      <td width="20%">Beispiel</td>
+      <td width="20%">Ausgabe</td>
+    </tr>
+    <tr>
+      <td>abs(Zahl)</td>
+      <td>Absolutwert</td>
+      <td>Reale Zahlen</td>
+      <td>Math.abs(-9)</td>
+      <td>
+        <script>
+
+          document.write(Math.abs(-9));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>acos(Zahl)</td>
+      <td>Arcuscosinus</td>
+      <td>[-1;1]</td>
+      <td>Math.acos(-1)</td>
+      <td>
+        <script>
+
+          document.write(Math.acos(-1));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>asin(Zahl)</td>
+      <td>Arcussinus</td>
+      <td>[-1;1]</td>
+      <td>Math.asin(0.5)</td>
+      <td>
+        <script>
+
+          document.write(Math.asin(0.5));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>atan(Zahl)</td>
+      <td>Arcustangens</td>
+      <td>[-1;1]</td>
+      <td>Math.atan(-0.5)</td>
+      <td>
+        <script>
+
+          document.write(Math.atan(-0.5));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>ceil(Zahl)</td>
+      <td>Aufrunden zur nächsten Ganzzahl</td>
+      <td>Reale Zahlen</td>
+      <td>Math.ceil(9.3)</td>
+      <td>
+        <script>
+
+          document.write(Math.ceil(9.3));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>cos(Zahl)</td>
+      <td>Cosinus</td>
+      <td>Reale Zahlen (Rad)</td>
+      <td>Math.cos(Math.PI)</td>
+      <td>
+        <script>
+
+          document.write(Math.cos(Math.PI));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>exp(Zahl)</td>
+      <td> Exponentialwert der Zahl auf Basis der Eulerschen Konstanten
+        E</td>
+      <td>Reale Zahlen</td>
+      <td>Math.exp(9.3)</td>
+      <td>
+        <script>
+
+          document.write(Math.exp(9.3));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>floor(Zahl)</td>
+      <td>Abrunden zur nächsten Ganzzahl</td>
+      <td>Reale Zahlen</td>
+      <td>Math.floor(3.9)</td>
+      <td>
+        <script>
+
+          document.write(Math.floor(3.9));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>log(Zahl)</td>
+      <td>Natürlicher Logarithmus</td>
+      <td>Reale Zahlen &gt; 0</td>
+      <td>Math.log(3.9)</td>
+      <td>
+        <script>
+
+          document.write(Math.log(3.9));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>max(Zahl1, Zahl2)</td>
+      <td>Rückgabe der größeren Zahl</td>
+      <td>Reale Zahlen</td>
+      <td>Math.max(9,3)</td>
+      <td>
+        <script>
+
+          document.write(Math.max(9, 3));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>min(Zahl1, Zahl2)</td>
+      <td>Rückgabe der kleineren Zahl</td>
+      <td>Reale Zahlen</td>
+      <td>Math.min(9,3)</td>
+      <td>
+        <script>
+
+          document.write(Math.min(9, 3));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>pow(Zahl1, Zahl2)</td>
+      <td>Exponentialfunktion &quot;Zahl1 hoch Zahl2&quot;</td>
+      <td>Reale Zahlen</td>
+      <td>Math.pow(9,3)</td>
+      <td>
+        <script>
+
+          document.write(Math.pow(9, 3));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>random()</td>
+      <td>Zufallszahl zwischen 0 und 1</td>
+      <td>&nbsp;</td>
+      <td>Math.random()</td>
+      <td>
+        <script>
+
+          document.write(Math.random());
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>round(Zahl)</td>
+      <td>kaufmännisches Runden</td>
+      <td>Reale Zahlen</td>
+      <td>Math.round(3.5)</td>
+      <td>
+        <script>
+
+          document.write(Math.round(3.5));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>sin(Zahl)</td>
+      <td>Sinus</td>
+      <td>Reale Zahlen (Rad)</td>
+      <td>Math.sin(Math.PI/2)</td>
+      <td>
+        <script>
+
+          document.write(Math.sin(Math.PI / 2));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>sqrt(Zahl)</td>
+      <td>Quadratwurzel</td>
+      <td>Reale Zahlen &gt; 0</td>
+      <td>Math.sqrt(9)</td>
+      <td>
+        <script>
+
+          document.write(Math.sqrt(9));
+
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>tan(Zahl)</td>
+      <td>Tangens</td>
+      <td>Reale Zahlen (Rad)</td>
+      <td>Math.tan(Math.PI/4)</td>
+      <td>
+        <script>
+
+          document.write(Math.tan(Math.PI / 4));
+
+        </script>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

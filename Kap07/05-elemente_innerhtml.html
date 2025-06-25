@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Zugriff auf Textelemente</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h1 id="u1"></h1>
+  <div id="d1"></div>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sapiente optio vitae magnam, excepturi
+    mollitia porro, tempora dignissimos voluptatibus, eaque commodi sint error officiis at! Molestiae fugit nulla facere
+    ullam?</p>
+
+  <p>Blanditiis numquam quisquam maxime quod dolorum odio quam totam, officia impedit est nemo esse nisi tempore
+    necessitatibus, ipsam fuga eos non accusamus. Nostrum quod quis ut numquam mollitia laudantium deleniti.</p>
+
+  <p>Totam distinctio expedita quae ducimus dolore, sapiente assumenda dolorum velit dolor sit maxime dolores porro
+    provident ut quis vero earum ullam rem harum fuga voluptas quod itaque quasi. Molestiae, nesciunt.</p>
+
+  <script>
+    // Elemente selektieren und Text zuweisen
+    document.getElementById("u1").innerHTML = "<i>Die Überschrift</i>";
+
+
+    document.getElementById("d1").innerHTML = "<i>Ich im DIV</i>";
+
+    let abs = document.getElementsByTagName("p");
+
+    console.log(abs[1]);
+
+    abs[1].innerHTML = "Text geändert";
+
+  </script>
+</body>
+
+</html>

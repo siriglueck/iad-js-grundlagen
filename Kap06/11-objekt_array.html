@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt Array</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+</head>
+<h3>Ausgabe der Eigenschaften und Methoden</h3>
+<div id="nobold">
+  <script>
+
+    let pname = new Array();
+    pname["Müller"] = "Peter";
+    pname["Schmidt"] = "Frank";
+    pname["Schulze"] = "Thomas";
+    pname["Lehmann"] = "Ingo";
+    for (let i in pname) {
+      document.write('Name: ', i, ', Vorname: ', pname[i], '<br>');
+    }
+
+
+    let stadt = new Array();
+    stadt["Wohnort"] = "Frankfurt";
+    stadt["Hauptstadt"] = "Berlin";
+    stadt.Messestadt = "Leipzig";
+
+    element = "Hauptstadt";
+    alert("Feld mit dem Namen \"" + element + "\" hat den Wert: " + stadt[element]);
+    element = "Messestadt";
+    alert("Feld mit dem Namen \"" + element + "\" hat den Wert: " + stadt[element]);
+
+    let indiz = new Array();
+    indiz.push("Walter", 245, true, 63.5, stadt);
+
+    indiz[45] = 42;
+
+    console.log(indiz);
+
+    console.log(indiz[30]);
+
+    /* ========================================================================== */
+
+    let nachname = ["Müller", "Schmidt", "Schulze", "Lehmann"];
+    let vorname = ["Peter", "Frank", "Thomas", "Ingo"];
+
+    document.write('let nachname = new Array("Müller", "Schmidt", "Schulze", "Lehmann");');
+    document.write('<br>let vorname = new Array("Peter", "Frank", "Thomas", "Ingo");');
+
+    document.write("<hr>nachname.concat(vorname): ", nachname.concat(vorname));
+
+    document.write("<br>nachname.join(\" + \"): ", nachname.join(" + "));
+    document.write("<br>nachname: ", nachname);
+
+    document.write("<br>nachname.pop(): ", nachname.pop());
+    document.write("<br>nachname: ", nachname);
+
+    document.write("<br>nachname.push(\"Schröder\"): ", nachname.push("Schröder"));
+    document.write("<br>nachname: ", nachname);
+
+    document.write("<br>nachname.reverse(): ", nachname.reverse());
+
+    document.write("<br>nachname.slice(1,4): ", nachname.slice(1, 4));
+    document.write("<br>nachname: ", nachname);
+
+    document.write("<br>vorname.shift(): ", vorname.shift());
+    document.write("<br>vorname: ", vorname);
+
+    document.write("<br>vorname.splice(1, 3, \"Leon\",\"Lucas\",\"Julian\"): ", vorname.splice(1, 3, "Leon", "Lucas", "Julian"));
+    document.write("<br>vorname: ", vorname);
+
+    document.write("<br>vorname.sort(): ", vorname.sort());
+    document.write("<br>vorname: ", vorname);
+
+    /**
+     * ! Übungen
+     * ? Kap06
+     */
+
+  </script>
+</div>
+</body>
+
+</html>

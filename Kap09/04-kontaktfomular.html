@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Formularauswertung</title>
+	<link rel="stylesheet" href="../css/style.min.css">
+	<script src="js/kontaktformular.js"></script>
+</head>
+
+<body>
+	<h3>Anmeldeformular</h3>
+	<form id="anmeldeform" action="test.php" method="get">
+
+		<p>
+			<input type="radio" id="female" name="anrede" value="Frau" checked>
+			<label for="female">Frau</label>
+			<input type="radio" id="male" name="anrede" value="Herr">
+			<label for="male">Herr</label>
+		</p>
+
+		<p>
+			<label for="nachname">Nachname</label>
+			<input type="text" id="nachname" name="nachname" maxlength="70">
+		</p>
+
+		<p>
+			<label for="vorname">Vorname</label>
+			<input type="text" id="vorname" name="vorname" maxlength="70">
+		</p>
+
+		<p>
+			<label for="telefon">Telefon</label>
+			<input type="text" id="telefon" name="telefon" maxlength="15">
+		</p>
+
+		<p>
+			<label for="anschrift">Anschrift</label>
+			<input type="text" id="anschrift" name="anschrift" maxlength="70">
+		</p>
+
+		<p>
+			<label for="plz">PLZ</label>
+			<input type="text" id="plz" name="plz" maxlength="5">
+		</p>
+
+		<p>
+			<label for="ort">Ort</label>
+			<input type="text" id="ort" name="ort" maxlength="70">
+		</p>
+
+		<p>
+			<label for="mail">E-Mail-Adresse</label>
+			<input type="text" id="mail" name="mail" maxlength="50">
+		</p>
+
+
+		<input type="submit" value="Anmelden">
+		<input type="reset" value="Zurücksetzen">
+	</form>
+	<p id="status"></p>
+</body>
+
+</html>

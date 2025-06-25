@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - Knoten löschen</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    function knotenLoeschen() {
+      const absatz = document.querySelector("#idAbsatz2");
+      document.querySelector("body").removeChild(absatz);
+    }
+    function attributLoeschen() {
+      const absatz = document.querySelector("#idAbsatz3");
+      absatz.removeAttribute("style");
+    }
+  </script>
+</head>
+
+<body>
+  <h1>DOM - Knoten löschen</h1>
+
+  <p id="idAbsatz1">erster Absatz</p>
+  <p id="idAbsatz2">zweiter Absatz</p>
+  <p id="idAbsatz3" style="font-weight:bold;">dritter Absatz</p>
+
+  <p>
+    <button id="idKnoten">Knoten löschen</button>
+    <button id="idAttribut">Attribut löschen</button>
+  </p>
+
+  <script>
+    document.querySelector("#idKnoten").addEventListener("click", knotenLoeschen);
+    document.querySelector("#idAttribut").addEventListener("click", attributLoeschen);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fehlerbehandlung</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h1>Fehlerbehandlung</h1>
+  <div id="ausgabe"></div>
+  <div id="err" class="danger"></div>
+  <script>
+    "use strict";
+    
+    function fehlerbehandlung( fehler, datei, zeile, spalte, fehlerobjekt ) {
+      document.getElementById("err").innerHTML = "<p><b>Fehler: </b>" + fehler
+      + "<br>Datei: " + datei
+      + "<br>Zeile: " + zeile
+      + "<br>Spalte: " + spalte
+      + "<br>Objekt: " + fehlerobjekt + "</p>";
+
+      console.log(fehlerbehandlung);
+    }
+
+    // ! onerror funktioniert unter Umständen nicht bei allen in der Praxis eingestzten Browsern
+    onerror = fehlerbehandlung;
+
+    // empfohlen:
+    /* function errorHandler(errorEvent) {
+      let err = "<p><b>Fehler</b>:<br>Meldung: " + errorEvent.message
+        + "<br>Datei: " + errorEvent.filename
+        + "<br>Zeile: " + errorEvent.lineno
+        + "<br>Spalte: " + errorEvent.colno
+        + "<br>Stack: " + errorEvent.error.stack
+        + "</p>";
+      console.log(errorEvent);
+      document.getElementById("err").innerHTML += err;
+      errorEvent.preventDefault();
+    }
+
+    window.addEventListener("error", errorHandler); */
+
+
+    const Y = 42;
+    document.getElementById("ausgabe").innerHTML = x + " + " + Y + "<br>";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+/* loading cicle animation */
+
+.loading-cicle {
+	width: 26px; height: 26px;
+	border: 4px solid #fff;
+	border-top-color: #749a02;
+	border-bottom-color: #749a02;
+	border-left-color: #749a02;
+	
+	border-radius: 50%;
+	
+	animation: spinn-left 2s linear infinite;
+}
+
+.loading-cicle > div {
+	width: 14px; height: 14px;
+	margin: 2px auto;
+	border: 4px solid #fff;
+	border-bottom-color: #749a02;
+	border-right-color: #749a02;
+	border-left-color: #749a02;
+	
+	border-radius: 50%;
+	
+	animation: spinn-right 2s linear infinite;
+}
+
+@keyframes spinn-left {
+	from { transform: rotate( 0deg ); }
+	to { transform: rotate( -360deg ); }
+}
+@keyframes spinn-right {
+	from { transform: rotate( 0deg ); }
+	to { transform: rotate( 720deg ); }
+}

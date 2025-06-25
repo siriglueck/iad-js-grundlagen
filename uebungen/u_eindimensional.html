@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>u_eindimensional</title>
+</head>
+<body>
+	<script>
+		let feld = [20, 22, 22, 30, 29, 24, 26, 25, 30, 21, 27, 27, 28, 23, 22];
+		let max = Math.max(...feld);
+		let setMax = [];
+		let j = 0;
+
+		document.write("<table><tr>");
+		for (let i= 0 ; i < feld.length; i++)
+			document.write("<td> " + i + " </td>");
+		document.write("</tr><br><tr>");
+
+
+		for (let i= 0 ; i < feld.length; i++)
+			document.write("<td> " + feld[i] + " </td>");
+		document.write("</tr>");
+		document.write("</table>");
+		
+		document.write("Maximum: " + max + "</br>");
+
+		// Find all positions of the max value
+		for (let i = 0; i < feld.length; i++) {
+			if (feld[i] === max) {
+				setMax.push(i);
+			}
+		}
+
+		// Output results
+		document.write("Position(en) des Maximums: ");
+		for (let i = 0; i < setMax.length; i++) {
+			document.write(setMax[i] + " ");
+		}
+	</script>
+</body>
+</html>

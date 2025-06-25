@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM-Beispiel</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body id="page">
+  <h1>DOM - Beispiel</h1>
+
+  <p style="font-family: Tahoma;">Erster Absatz</p>
+
+  <div id="wrapper">
+    <p>
+      Zweiter Absatz mit
+      <span style="font-weight:bold;">
+        Fettschrift
+      </span>
+    </p>
+  </div>
+
+  <p style="font-weight:bold;">
+    Dritter Absatz mit
+    <a href="#">
+      einem Link
+    </a>
+  </p>
+
+  <script>
+    const abs1 = document.getElementsByTagName("p");
+    const abs2 = document.querySelectorAll("p");
+
+    console.log(abs1);
+    console.log(abs2);
+
+    let ausgabe = "";
+
+    for (let i = 0; i < abs2.length; i++) {
+      ausgabe += "Inhalt: " + abs2[i].firstChild.nodeValue + "\n";
+      ausgabe += "Attribut style: " + abs2[i].getAttribute("style") + "\n";
+      ausgabe += "Eltern-Element: " + abs2[i].parentElement.getAttribute("id") + "\n\n";
+    }
+
+    console.log(ausgabe);
+  </script>
+</body>
+
+</html>

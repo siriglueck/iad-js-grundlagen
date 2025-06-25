@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>try catch</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h1>try catch</h1>
+  <div id="ausgabe"></div>
+  <div id="err" class="danger"></div>
+
+  <script>
+    "use strict";
+    let brd = document.getElementById("brd"); // Fehler, Element mit ID brd existiert nicht
+
+    try {
+      if (brd) {
+        document.getElementById("ausgabe").innerHTML = brd.innerHTML + "<br>";
+      } else {
+        throw new Error("kein Element 'brd' gefunden!");
+      }
+    } catch (e) {
+      console.log(e);
+      document.getElementById("err").innerHTML = e;
+    } finally {
+      document.getElementById("ausgabe").innerHTML = "Dies wird auf jeden Fall ausgeführt!";
+    }
+
+  </script>
+</body>
+
+</html>

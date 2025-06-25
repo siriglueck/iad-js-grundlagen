@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Schutz des DOM-Baums - richtiger Zugriff</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    // onload ist ein Ereignis, welches gefeuert wird wenn das komplette Dokument inklusive aller eingebunden Skripte und Medien geladen wurde
+
+    window.onload = function () {
+      document.getElementById("info").innerHTML = document.getElementsByTagName("img")[0].alt;
+    }
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Schutz des DOM-Baums - richtiger Zugriff</h1>
+  <img src="images/b1.jpg" alt="Am Fluss">
+  <div id="info"></div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt, Instanzen, Eigenschaften und Methoden</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3>Die Kapitäne der Raumschiffe</h3>
+  <script type="text/javascript">
+
+    function Raumschiff(name, modell, kapitaen) {
+      this.name = name;
+      this.modell = modell;
+      /* Hier neue Eigenschaft einfügen (Parameter nicht vergessen!) */
+      this.kapitaen = kapitaen;
+    }
+
+    function Person(name, vorname, geschlecht, lebensform) {
+      this.name = name;
+      this.vorname = vorname;
+      this.geschlecht = geschlecht;
+      this.lebensform = lebensform;
+    }
+
+    let k1 = new Person("Kirk", "James Tiberius", "männlich", "Mensch");
+    /* Objekt enterprice erzeugen und als Kapitän die Referenz auf das Objekt k1 hinzufügen */
+    let enterprise = new Raumschiff("U.S.S. Enterprise", "NCC-1701", k1);
+
+    let k2 = new Person("Janeway", "Kathryn", "weiblich", "Mensch");
+    let voyager = new Raumschiff("U.S.S. Voyager", "NCC-74656", k2);
+    /* dito für Voyager */
+
+    k1.lebensform = "Nicht-Vulkanier";
+
+    with (document) {
+      write("<p>", enterprise.name, " ", enterprise.modell);
+      write("<br>Kapitän: ", enterprise.kapitaen.vorname, " ", enterprise.kapitaen.name, ", ", enterprise.kapitaen.geschlecht);
+      write("<br>Lebensform: ", enterprise.kapitaen.lebensform, "</p>");
+
+      write("<p>", voyager.name, " ", voyager.modell);
+      write("<br>Kapitän: ", voyager.kapitaen.vorname, " ", voyager.kapitaen.name, ", ", voyager.kapitaen.geschlecht);
+      write("<br>Lebensform: ", voyager.kapitaen.lebensform, "</p>");
+    }
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="de">
+  <meta charset="utf-8">
+  <title>Bubble</title>
+  <link rel="stylesheet" href="css/bubble.css">
+</head>
+
+<body>
+  <h1>Die Bubble-Phase</h1>
+
+  <div id="wrapper">
+    <div id="klickbereich">
+      <button id="klickmich">Klick mich an!</button>
+    </div>
+  </div>
+
+  <div id="antwort"></div>
+
+  <script>
+    let output = document.querySelector("#antwort");
+    let klickmich = document.querySelector("#klickmich");
+    let klickbereich = document.querySelector("#klickbereich");
+    let wrapper = document.querySelector("#wrapper");
+    let body = document.querySelector("body");
+    let html = document.querySelector("html");
+
+
+    klickmich.addEventListener("click", evt => {
+      output.innerHTML += "Auf den <b>Button</b> wurde geklickt.<br>";
+    }, true);
+
+    klickbereich.addEventListener("click", evt => {
+      output.innerHTML += "Auf den <b>Klickbereich</b> wurde geklickt.<br>";
+    }, true);
+
+    wrapper.addEventListener("click", evt => {
+      output.innerHTML += "Auf den <b>Wrapper</b> wurde geklickt.<br>";
+    });
+
+    body.addEventListener("click", evt => {
+      output.innerHTML += "Auf den <b>Body</b> wurde geklickt.<br>";
+    }, true);
+
+    html.addEventListener("click", evt => {
+      output.innerHTML += "Auf den <b>Root-Element</b> wurde geklickt.<br>";
+    }, true);
+  </script>
+</body>
+
+</html>

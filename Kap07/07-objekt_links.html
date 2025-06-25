@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>Das Objektfeld Hyperlinks</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <nav>
+    <a href="https://www.google.de/" name="link1">Google</a> |
+    <a href="https://www.bing.com" target="neu">Bing</a> |
+    <a href="https://www.selfhtml.org" target="_blank" name="SelfHTML">SelfHTML</a>
+  </nav>
+
+  <div id="info"></div>
+
+  <script>
+    let info = document.querySelector("#info");
+    info.innerHTML = "Anzahl der Hyperlinks: " + document.links.length + "<br>";
+    for (let i = 0; i < document.links.length; i++) {
+      info.innerHTML += ((i + 1) + ". Link:" + "<br>" +
+        "Name: " + document.links[i].name + "<br>" +
+        "Ziel: " + document.links[i].target + "<br>" +
+        "Verweis: " + document.links[i] + "<br>" +
+        "Text: " + document.links[i].text + "<hr>");
+    }
+
+  </script>
+
+</body>
+
+</html>

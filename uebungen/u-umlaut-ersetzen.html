@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test</title>
+</head>
+<body>
+	<script>
+		var weisheiten = new Array(10);
+		weisheiten[0] = ["Gäste und Reiher sehen am schönsten aus, wenn sie sich erheben."];
+		weisheiten[1] = ["Vier Dinge kommen nicht zurück: der abgeschossene Pfeil, das gesprochene Wort, die verpasste Gelegenheit und das versäumte Leben."];
+		weisheiten[2] = ["Wer wenig gesehen hat, staunt viel."];
+		weisheiten[3] = ["Um klarer zu sehen, genügt es oft, nur den Blick schweifen zu lassen."];
+		weisheiten[4] = ["Wer mich korrekterweise kritisiert, ist mein Lehrer, wer mir fälschlich schmeichelt, ist mein Feind."];
+		weisheiten[5] = ["Wer Angst hat, die Würfel zu schütteln, wird niemals eine Sechs werfen."];
+		weisheiten[6] = ["Wenn man auch den Kopf in den Sand steckt, der Hintern bleibt zu sehen."];
+		weisheiten[7] = ["Wir lieben das Leben nur, weil es uns ungewiss ist."];
+		weisheiten[8] = ["Der Frosch im Brunnen weiß nichts vom großen Ozean."];
+		weisheiten[9] = ["Sich an den einfachen Dingen des Lebens zu erfreuen, bedeutet sein Leben zu genießen."];
+
+		for(let i = 0; i < weisheiten.length ; i++) {
+			let text = weisheiten[i][0]; // Access the string inside the array
+    
+			let replaced = text
+				.replace(/ä/g, "ae")
+				.replace(/ö/g, "oe")
+				.replace(/ü/g, "ue");	
+
+			document.write(replaced + "<br><br>");
+
+		}
+			
+		function RolleWuerfel() {
+            let Zufallszahl = Math.random() *  10;
+            return (Math.floor(Zufallszahl));
+        }
+
+         document.write("-------------------------------</br></br>");
+         document.write(weisheiten[RolleWuerfel()][0]);
+
+		 let zeit = new Date();
+		 let tellTime = zeit.getHours() + ":" + zeit.getMinutes() + " Uhr";
+
+		document.title = tellTime;
+
+	</script>
+</body>
+</html>

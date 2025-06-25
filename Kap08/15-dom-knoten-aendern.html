@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - Knoten ändern</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    function textAendern(id) {
+      const absatz = document.querySelector(id);
+
+      // Prüfe den Absatz auf Kind-Knoten
+      if (absatz.hasChildNodes()) {
+        // wenn Ja, den Text des Kind-Knotens ändern
+        absatz.firstChild.nodeValue = "Text geändert";
+      } else {
+        // wenn Nein, Textknoten erzeugen und dem Absatz hinzufügen
+        const text = document.createTextNode("Text erzeugt");
+        absatz.appendChild(text);
+      }
+    }
+    function htmlAendern() {
+      const absatz = document.querySelector("#idAbsatz4");
+      absatz.innerHTML = "Änderung <i>in viertem</i> Absatz";
+    }
+    function klonen() {
+      const absatz = document.querySelector("#idAbsatz3");
+      // der Parameter true der Methode cloneNode bedeutet: kopiere mit allen Kind-Elementen
+      const kopie = absatz.cloneNode(true);
+      document.querySelector("body").appendChild(kopie);
+    }
+    function umgeben() {
+      const absatz = document.querySelector("#idAbsatz3");
+      const kursiv = document.createElement("span");
+      kursiv.setAttribute("style", "font-style:italic;");
+
+      // Element ersetzen
+      const ersetzt = absatz.replaceChild(kursiv, absatz.firstChild);
+      kursiv.appendChild(ersetzt);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>DOM - Knoten ändern</h1>
+
+  <p id="idAbsatz1">1. Absatz</p>
+  <p id="idAbsatz2"></p>
+  <p id="idAbsatz3"><span style="font-weight:bold;">dritter</span> Absatz</p>
+  <p id="idAbsatz4">4. Absatz</p>
+
+  <p>
+    <button id="textAendern">Text ändern</button>
+    <button id="textErzeugen">Text erzeugen</button>
+    <button id="htmlAendern">Text und HTML ändern</button>
+  </p>
+  <p>
+    <button id="umgeben">Knoten mit HTML umgeben</button>
+    <button id="klonen">Knoten klonen</button>
+  </p>
+
+  <script>
+    document.querySelector("#textAendern").addEventListener("click", () => { textAendern("#idAbsatz1"); });
+    document.querySelector("#textErzeugen").addEventListener("click", () => { textAendern("#idAbsatz2"); });
+    document.querySelector("#htmlAendern").addEventListener("click", htmlAendern);
+    document.querySelector("#umgeben").addEventListener("click", umgeben);
+    document.querySelector("#klonen").addEventListener("click", klonen);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position auf einer Karte ausgeben</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h1>Position auf einer Karte ausgeben</h1>
+  <div id="pos" style="width: 800px;height: 600px;">
+    ... ihre Position wird ermittelt
+  </div>
+
+  <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+  <script>
+
+    /**
+     * ! Google Maps funktioniert nur noch mit API-Key und Google Konto einschließlich Angabe der Kreditkartennummer. Bei ca. 500-1000 Zugriffen pro Tag sind die 200€ Freibetrag pro Monat aufgebraucht. GM ist für größere nicht kommerzielle Seiten daher nicht mehr geeignet.
+     * */
+
+    function initialize(coords) {
+      let latlng = new google.maps.LatLng(coords.latitude, coords.longitude);
+      let options = {
+        zoom: 8,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      let map = new google.maps.Map(document.querySelector("#pos"), options);
+
+      let marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        title: "Hier bist du ;-)"
+      });
+    }
+
+    navigator.geolocation.getCurrentPosition(function (position) {
+      initialize(position.coords);
+    }, function () {
+      document.querySelector("#pos").innerHTML = "Deine Position konnte leider nicht ermittelt werden.";
+    });
+  </script>
+
+</body>
+
+</html>

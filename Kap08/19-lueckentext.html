@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lückentext</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <style>
+    span {
+      visibility: hidden;
+      color: #0a0;
+    }
+
+    .spoil span {
+      visibility: visible;
+    }
+
+    button::after {
+      content: attr(data-on);
+    }
+
+    .spoil button::after {
+      content: attr(data-off);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lückentext</h1>
+  <p>Lorem ipsum dolor, <span>sit amet consectetur</span> adipisicing elit. Ab exercitationem mollitia optio <span>sit
+      incidunt</span>, odit culpa doloremque cupiditate ex nulla corrupti, dicta aliquid dolor, aperiam <span>quia
+      possimus</span> molestiae non reprehenderit.</p>
+
+  <button id="loesung" data-on="einblenden" data-off="ausblenden"></button>
+
+  <script>
+    document.querySelector("#loesung").addEventListener("click", () => {
+      document.querySelector("body").classList.toggle("spoil");
+    });
+
+    document.querySelector("button").style.borderColor = "orange";
+
+    /**
+     * ! Übungen
+     * ? Kap07, Kap08
+     */
+  </script>
+</body>
+
+</html>

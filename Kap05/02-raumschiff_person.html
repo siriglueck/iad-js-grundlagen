@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt, Instanzen, Eigenschaften und Methoden</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3>Die Personen der Raumschiffe</h3>
+  <script type="text/javascript">
+
+    function Raumschiff(name, modell) {
+      this.name = name;
+      this.modell = modell;
+    }
+
+
+    function Person(name, vorname) {
+      this.name = name;
+      this.vorname = vorname;
+    }
+
+    let enterprise = new Raumschiff("U.S.S. Enterprise", "NCC-1701");
+    document.write("<p>", enterprise.name, " ", enterprise.modell);
+
+    let voyager = new Raumschiff("U.S.S. Voyager", "NCC-74656");
+    document.write("<hr>", voyager.name, " ", voyager.modell);
+
+    /* Personen-Objekte erzeugen und ausgeben */
+    let k1 = new Person("Kirk", "James Tiberius");
+    document.write("<p>", k1.vorname, " ", k1.name);
+
+    let k2 = new Person("Janeway", "Kathryn");
+    document.write("<p>", k2.vorname, " ", k2.name);
+  </script>
+</body>

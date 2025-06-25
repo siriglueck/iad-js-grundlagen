@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karte mit Open Street Map</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.13.1/OpenLayers.js"></script>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <style>
+    main {
+      background: #F1F3F4;
+      border-color: #d5d5d5;
+    }
+
+    div {
+      border: none;
+    }
+
+    #karte {
+      width: 600px;
+      height: 400px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>HTML5 - Geolocation<br>aktuellen Standort in einer OpenStreetmap-Karte ausgeben</h1>
+  <main>
+    <p>Sobald Sie auf den Button klicken, werden Ihre Koordinaten ermittelt und in einem Kartenausschnitt ausgegeben.
+    </p>
+    <button id="los">Los!</button>
+    <p id="ausgabe"></p>
+    <div id="karte"></div>
+  </main>
+  <script>
+    let button = document.getElementById('los');
+    button.addEventListener('click', ermittlePosition);
+    let ausgabe = document.getElementById('ausgabe');
+
+    function ermittlePosition() {
+      if (navigator.geolocation) {
+        // let options = { timeout: 0.5 }
+        navigator.geolocation.getCurrentPosition(zeigePosition, zeigeFehler);
+      } else {
+        ausgabe.innerHTML = 'Ihr Browser unterstützt keine Geolocation.';
+      }
+    }
+
+    function zeigePosition(position) {
+      map = new OpenLayers.Map('karte');
+      map.addLayer(new OpenLayers.Layer.OSM());
+      let lonLat = new OpenLayers.LonLat(position.coords.longitude, position.coords
+        .latitude) //Mitte der Karte angeben
+        .transform(new OpenLayers.Projection('EPSG:4326'), // transform from WGS 1984 (Weltweites geodätisches Referenzsystem)
+          map.getProjectionObject() // to Spherical Mercator Projection (winkeltreue Zylinderkartenprojektion)
+        );
+      let zoom = 12;
+      let markers = new OpenLayers.Layer.Markers('Markers'); //Marker einfügen
+      map.addLayer(markers);
+      markers.addMarker(new OpenLayers.Marker(lonLat));
+      map.setCenter(lonLat, zoom);
+    }
+
+    function zeigeFehler(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          ausgabe.innerHTML = "Benutzer lehnte Standortabfrage ab.";
+          console.log(error.PERMISSION_DENIED);
+          break;
+        case error.POSITION_UNAVAILABLE:
+          ausgabe.innerHTML = "Standortdaten sind nicht verfügbar."
+          break;
+        case error.TIMEOUT:
+          ausgabe.innerHTML = "Die Standortabfrage dauerte zu lange (Time-out)." 
+          break;
+        case error.UNKNOWN_ERROR:
+          ausgabe.innerHTML = "unbekannter Fehler."
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

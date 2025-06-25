@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="de">
+  <meta charset="utf-8">
+  <title>Bubble</title>
+  <link rel="stylesheet" href="css/bubble.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Die Bubble-Phase</h1>
+    <div class="bubbeling">
+
+      <div class="capture caseB">
+
+        <h6>bubble false</h6>
+        <pre class="conso resultB">&nbsp;</pre>
+
+        <ul>
+          <li><span>Element 1</span></li>
+          <li><span>Element 2</span>
+            <ul>
+              <li><span>Element 3</span></li>
+              <li><span>Element 4</span></li>
+            </ul>
+          </li>
+          <li><span>Element 5</span>
+            <ul>
+              <li><span>Element 6</span></li>
+              <li><span>Element 7</span>
+                <ul>
+                  <li><span>Element 8</span></li>
+                  <li><span>Element 9</span></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><span>Element 10</span></li>
+        </ul>
+
+      </div>
+
+      <div class="capture caseC">
+
+        <h6>bubble true – capture</h6>
+        <pre class="conso resultC">&nbsp;</pre>
+
+        <ul>
+          <li><span>Element 1</span></li>
+          <li><span>Element 2</span>
+
+            <ul>
+              <li><span>Element 3</span></li>
+              <li><span>Element 4</span></li>
+            </ul>
+
+          </li>
+          <li><span>Element 5</span>
+
+            <ul>
+              <li><span>Element 6</span></li>
+              <li><span>Element 7</span>
+
+                <ul>
+                  <li><span>Element 8</span></li>
+                  <li><span>Element 9</span></li>
+                </ul>
+
+              </li>
+
+            </ul>
+
+          </li>
+          <li><span>Element 10</span></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div id="antwort"></div>
+  </div>
+
+  <script>
+    const caseB = document.querySelectorAll(".caseB li");
+    for (const elem of caseB) {
+      elem.addEventListener("click", function () {
+        document.querySelector(".caseB pre").textContent = this.childNodes[0].textContent.trim();
+      })
+    }
+
+    const caseC = document.querySelectorAll(".caseC li");
+    for (const elem of caseC) {
+      elem.addEventListener("click", function () {
+        document.querySelector(".caseC pre").textContent = this.childNodes[0].textContent.trim();
+      }, true)
+    }
+  </script>
+</body>
+
+</html>

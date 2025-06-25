@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt, Instanzen, Eigenschaften und Methoden</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3>Und es bewegt sich doch</h3>
+  <script>
+
+    function Raumschiff(name, modell) {
+      this.name = name;
+      this.modell = modell;
+      this.entfernung = 0;
+
+      /* Hier Methode einfügen */
+      this.entfernen = function (lichtjahre) {
+        this.entfernung += lichtjahre;
+        document.write(this.name + " => Aktuelle Reise: " + lichtjahre + " Lichtjahre -> Erdentfernung: " + this.entfernung + " Lichtjahre<br>");
+      }
+    }
+
+    let enterprise = new Raumschiff("U.S.S. Enterprise", "NCC-1701");
+    let voyager = new Raumschiff("U.S.S. Voyager", "NCC-74656");
+
+    document.write("<p>Beide Raumschiffe sind von der Erde gestartet:<br>");
+
+    enterprise.entfernen(50);
+    voyager.entfernen(180);
+    enterprise.entfernen(200);
+    voyager.entfernen(-50);
+    enterprise.entfernen(-100);
+    voyager.entfernen(40);
+    enterprise.entfernen(-150);
+    voyager.entfernen(-170);
+
+    document.write("</p>");
+
+  </script>
+</body>
+
+</html>

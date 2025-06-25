@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video mit JavaScript steuern</title>
+  <link rel="stylesheet" href="css/simple-line-icons.css">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="stylesheet" href="css/video.css">
+</head>
+
+<body>
+  <h1>Video mit JavaScript steuern</h1>
+
+  <video preload="metadata" playsinline id="video">
+    <source src="video/mm.ogv" type="video/ogv">
+    <source src="video/mm.mp4" type="video/mp4">
+  </video>
+
+  <div id="playerControls">
+    <div>
+      aktuelle Zeit: <span id="played">0:00</span> / Dauer: <span id="toend"></span><br>
+      <br>
+      <input type="range" id="rangeLine" value="0">
+    </div>
+
+    <span id="play" class="icon-control-play"></span>
+    <span id="pause" class="icon-control-end"></span>
+    <span id="rewind" class="icon-control-rewind"></span>
+  </div>
+
+  <script src="js/video.js"></script>
+</body>
+
+</html>

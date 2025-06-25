@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Formulareigenschaften : Auswahlliste</title>
+	<link rel="stylesheet" href="../css/style.min.css">
+	<script>
+		window.onload = function () {
+			durchlauf();
+			document.getElementsByName("auswahl[]")[0].onchange = durchlauf;
+			document.getElementById("form1").action = "test.php";
+		};
+		function durchlauf() {
+			let ausgabe = "";
+			let liste = document.getElementsByName("auswahl[]")[0];
+
+			for (i = 0; i < liste.length; i++) {
+				ausgabe += 'index: ' + liste.options[i].index + '<br>';
+				ausgabe += 'defaultSelected: ' + liste.options[i].defaultSelected + '<br>';
+				ausgabe += 'selected: ' + liste.options[i].selected + '<br>';
+				ausgabe += 'text: ' + liste.options[i].text + '<br>';
+				ausgabe += 'value: ' + liste.options[i].value + '<br>' + '<hr>';
+			}
+
+			document.getElementById("ausgabe").innerHTML = ausgabe;
+		}
+	</script>
+
+</head>
+
+<body>
+	<h3>Anzeige der Eigenschaften der ausgewählten Elemente</h3>
+	<form id="form1">
+		<select name="auswahl[]" size="4" multiple>
+			<option value="Hahn">Der laute Hahn</option>
+			<option value="Katze">Die sanfte Katze</option>
+			<option value="Hund">Der treue Hund</option>
+			<option>Der schlaue Esel</option>
+		</select>
+		<input type="submit">
+		<hr />
+
+	</form>
+	<div id="ausgabe"></div>
+</body>
+
+</html>

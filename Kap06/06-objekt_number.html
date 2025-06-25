@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+  <title>Objekt Number</title>
+</head>
+
+<body>
+  <h3>Ausgabe der Eigenschaften und Methoden</h3>
+  <script>
+
+    document.write("<br>Number.MAX_VALUE: ", Number.MAX_VALUE);
+    document.write("<br>Number.MIN_VALUE: ", Number.MIN_VALUE);
+    document.write("<br>Number.NaN: ", Number.NaN);
+    document.write("<br>Number.NEGATIVE_INFINITY: ", Number.NEGATIVE_INFINITY);
+    document.write("<br>Number.POSITIVE_INFINITY: ", Number.POSITIVE_INFINITY);
+
+    let num = 77.1234;
+    document.write("<hr>Wert von Variable num: ", num);
+    document.write("<br>num.toExponential() = " + num.toExponential());
+    document.write("<br>num.toExponential(4) = " + num.toExponential(4));
+    document.write("<br>num.toExponential(2) = " + num.toExponential(2));
+    document.write("<br>77.1234 .toExponential() = " + 77.1234.toExponential())
+    document.write("<br>77 .toExponential() = " + 77 .toExponential());
+
+    num = 10.1234;
+    document.write("<hr>Wert von Variable num: ", num);
+    document.write("<br>num.toFixed() = " + num.toFixed());
+    document.write("<br>num.toFixed(4) = " + num.toFixed(4));
+    document.write("<br>10.1234 .toFixed(2) = " + 10.1234.toFixed(2));
+
+    num = 1250;
+    document.write("<hr>Wert von Variable num: ", num);
+    document.write("<br>num.toPrecision() = " + num.toPrecision());
+    document.write("<br>num.toPrecision(4) = " + num.toPrecision(4));
+    document.write("<br>num.toPrecision(2) = " + num.toPrecision(2));
+    document.write("<br>num.toPrecision(1) = " + num.toPrecision(1));
+    document.write("<br>1250 .toPrecision(2) = " + 1250 .toPrecision(2));
+    document.write("<br>1250 .toPrecision(5) = " + 1250 .toPrecision(5));
+
+  </script>
+</body>
+
+</html>

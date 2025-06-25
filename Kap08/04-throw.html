@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ausnahmen werfen</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h1>Ausnahmen werfen</h1>
+  <p>
+    <script>
+      const zahl = parseFloat(prompt("Bitte eine Zahl > 0 eingeben"));
+
+      try {
+        if (isNaN(zahl)) {
+          throw "Keine gültige Zahl";
+        }
+        if (zahl <= 0) {
+          throw "Zahl kleiner als 0!";
+        }
+        document.write(zahl);
+      } catch (e) {
+        console.log(e);
+      }
+    </script>
+  </p>
+</body>
+
+</html>

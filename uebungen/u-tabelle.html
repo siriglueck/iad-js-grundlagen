@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>u_tabelle</title>
+</head>
+<body>
+	<script>
+		let Count = 1;
+		let Num = 1;
+
+		document.write("<table>");
+			while (Num <= 5) {
+				document.write("<tr>");
+					do {
+						document.write(Count);
+					} while (Count <= 15);
+					Count = 1;
+				document.write("</tr>");
+				Num++
+			}
+		document.write("</table>");
+	</script>
+</body>
+</html>

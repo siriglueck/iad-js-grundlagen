@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <title>DOM - Knoten hinzufügen</title>
+  <script>
+    function anhaengen() {
+      // Text- und Elementknoten erzeugen
+
+
+      // Textknoten an Elementknoten als Kindknoten anhängen
+
+
+      // Erzeugte HTML-Struktur der bestehenden Struktur hinzufügen
+
+    }
+
+    function einschieben() {
+      // Text- und Elementknoten erzeugen
+
+
+      // Textknoten an Elementknoten als Kindknoten anhängen
+
+      
+      // Erzeugte HTML-Struktur der bestehenden Struktur einschieben
+
+    }
+  </script>
+</head>
+
+<body>
+  <h1>DOM - Knoten hinzufügen</h1>
+
+  <p id="idAbsatz1">1. Absatz</p>
+  <p id="idAbsatz2">2. Absatz</p>
+  <p id="idAbsatz3">3. Absatz</p>
+
+  <button id="idAnhaengen">Anhängen</button>
+  <button id="idEinschieben">Einschieben</button>
+
+  <script>
+    document.querySelector("#idAnhaengen").addEventListener("click", anhaengen);
+    document.querySelector("#idEinschieben").addEventListener("click", einschieben);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Würfel mit Hilfe von Math.random()</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h2>Würfelergebnisse:<h2>
+      <div id="wuerfel">-
+        <script>
+          function RolleWuerfel() {
+            let Zufallszahl = Math.random() * 6;
+            return (Math.floor(Zufallszahl) + 1);
+          }
+
+          for (let i = 0; i < 10; i++)
+            document.write(RolleWuerfel() + " - ");
+        </script>
+      </div>
+</body>
+
+</html>

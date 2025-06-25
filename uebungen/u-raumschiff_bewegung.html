@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Raumschiff Bewegung</title>
+	<script>
+		class Raumschiff {
+			constructor (name, entfernung) {
+				this.name = name;
+				this.entfernung = 0;
+			}
+			entfernen(wert) {
+				this.entfernung += wert;
+				return this.name + " => Aktuelle Reise: " + wert + " Lichtjahre -> Erdentfernung: " + this.entfernung + " Lichtjahre" ;
+			}
+			zurueck(wert) {
+				this.entfernung -= wert;
+				if (this.entfernung == 0) 
+					return "Wilkommen zu Hause auf der Erde, " + this.name + "!";
+				else if (this.entfernung < 0) 
+					return this.name + " ist bereits auf der Erde gelandet!";
+				else
+					return this.name + " kommt zurück zur Erde: nur noch " + this.entfernung + " Lichtjahre";
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- Initialization -->
+	<script> 
+		let enterprise = new Raumschiff("U.S.S.Enterprise");
+		console.log("Das Raumschiff ist von der Erder gestartet:");
+		console.log(enterprise.entfernen(50));
+		console.log(enterprise.entfernen(100));
+		console.log(enterprise.zurueck(50));
+		console.log(enterprise.zurueck(100));
+		console.log(enterprise.zurueck(50));
+
+
+	</script>
+
+</body>
+</html>

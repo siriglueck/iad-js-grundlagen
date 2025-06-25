@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Funktion mit unbestimmter Anzahl an Parametern</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3>Funktion mit unbestimmter Anzahl an Parametern</h3>
+  <p>Die Funktion</p>
+  <pre>function test(par1, par2) {
+
+}</pre>
+  <p>wird mit zusätzlichen Parametern aufgerufen:</p>
+  <pre>test(10, 11, 12, 13, 14, 15, 16);</pre>
+
+  <p><u>Ergebnis:</u></p>
+
+  <script>
+
+    function test(par1, par2) {
+      document.write("Parameter 1 mit dem Wert: " + par1 + "<br>");
+      document.write("Parameter 2 mit dem Wert: " + par2 + "<br>");
+
+      for (i = 2; i < arguments.length; i++) {
+        document.write("Zusätzlicher Parameter " + (i - 1) + " mit dem Wert: " + arguments[i] + "<br>");
+      }
+    }
+
+    test(10, 11, 12, 13, 14, 15, 16);
+
+  </script>
+</body>
+
+</html>

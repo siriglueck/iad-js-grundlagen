@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ausnahmebehandlung</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h1>Ausnahmebehandlung</h1>
+  <p>
+    <script>
+      const Y = 42;
+
+      try {
+        document.write(x + "<br>");
+        document.write(Y + "<br>");
+      } catch (e) {
+        console.log(e);
+      } finally {
+        document.write("Dies wird auf jeden Fall ausgegeben<br>");
+      }
+
+    </script>
+  </p>
+</body>
+
+</html>

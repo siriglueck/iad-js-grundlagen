@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Funktionsaufrufe</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3>Berechnen mehrerer Kreisflächen</h3>
+  <p>nach der Formel: <code>A = &pi; / 4 * d<sup>2</sup></code></p>
+  <p>
+    <script>
+      function flaeche(d) {
+        return Math.PI / 4 * d * d;
+      }
+      for (dm = 0; dm <= 100; dm += 5) {
+        document.write("d=", dm, " m; A=", flaeche(dm), " m<sup>2<\/sup><br>");
+      }
+    </script>
+  </p>
+</body>
+
+</html>

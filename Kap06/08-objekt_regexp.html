@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt RegExp</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3>Methoden von RegExp()</h3>
+  <script>
+
+    let Text = "Frau Klößer hat Bücher im Wert von 49,90€ bestellt und muss diese innerhalb der nächsten 14 Tage bezahlen.";
+
+    document.write("Vorgabewert:<br>" + Text);
+
+    let Suche = new RegExp(/\d\d/);
+    document.write("<hr>Suche nach der ersten zweistelligen Zahl<br>");
+    document.write(Suche.test(Text) + "<br>");
+    document.write(Suche.exec(Text));
+
+    Suche = new RegExp(/\d{1,}\sTage/);
+    document.write("<hr>Suche nach dem Wort \"Tage\" mit vorangesetzter Zahl<br>");
+    document.write(Suche.test(Text) + "<br>");
+    document.write(Suche.exec(Text));
+
+    Suche = new RegExp(/[MWG]ut/);
+    document.write("<hr>Suche nach \"Mut\", \"Wut\" oder \"Gut\"<br>");
+    document.write(Suche.test(Text) + "<br>");
+    document.write(Suche.exec(Text));
+
+    Suche = new RegExp(/\d{1,},\d{2}€/);
+    document.write("<hr>Suche nach einer Preisangabe mit zwei Kommastellen<br>");
+    document.write(Suche.test(Text) + "<br>");
+    document.write(Suche.exec(Text));
+
+  </script>
+</body>
+
+</html>

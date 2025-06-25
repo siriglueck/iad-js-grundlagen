@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt String</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h2>zeichenketten-Verarbeitung</h2>
+  <script>
+
+    let zitat1 = "Sein oder nicht sein,";
+    let zitat2 = " das ist hier die Frage.";
+    let zahl = "5";
+
+    document.write("zitat1 = " + zitat1 + "<br>"
+      + "zitat2 = " + zitat2 + "<br>"
+      + "zahl   = " + zahl + "<br>"
+      + "zitat1.length           = " + zitat1.length + " Zeichen<br>"
+      + "zitat1.charAt(6)        = " + zitat1.charAt(6) + "<br>"
+      + "zitat1.charCodeAt(6)    = " + zitat1.charCodeAt(6) + "<br>"
+      + "zitat1.concat(zitat2)   = " + zitat1.concat(zitat2) + "<br>"
+      + "zitat1.indexOf('c')     = " + zitat1.indexOf("c") + ". Stelle<br>"
+      + "zitat1.lastIndexOf('e') = " + zitat1.lastIndexOf("e") + ". Stelle<br>"
+      + "zitat1.slice(5, 9)      = " + zitat1.slice(5, 9) + "<br>"
+      + "zitat1.split(' ')       = " + zitat1.split(" ") + "<br>"
+      + "zitat1.substr(5, 4)     = " + zitat1.substr(5, 4) + "<br>"
+      + "zitat1.substring(5, 9)  = " + zitat1.substring(5, 9) + "<br>"
+      + "zitat1.toLowerCase()    = " + zitat1.toLowerCase() + "<br>"
+      + "zitat1.toUpperCase()    = " + zitat1.toUpperCase() + "<br>"
+      + "zahl.padStart(2, '0')   = " + zahl.padStart(2, '0') + "<br>"
+      + "zahl.slice(-2)          = 0" + zahl.slice(-2));
+  </script>
+</body>
+
+</html>

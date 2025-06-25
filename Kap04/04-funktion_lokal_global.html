@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Lokale und globale Variablen</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3>Lokale und globale Variablen</h3>
+  <script>
+
+    let x = 10;
+    let y = 10;
+    let z = 1;
+
+    function produkt(x, y) {
+      let ergebnis = x * y;
+      document.write("<br>Werte innerhalb der Funktion: x = " + x + "; y = " + y + "; z = " + z + "<br>");
+
+      document.write("Ergebnis in der Funktion: x * y = " + ergebnis + "<br>");
+      return ergebnis;
+    }
+
+    document.write("Werte außerhalb der Funktion: x = " + x + "; y = " + y + "; z = " + z + "<br>");
+
+    let meinProdukt = x * y * produkt(3, 4);
+
+    document.write("<br>Ergebnis außerhalb der Funktion: x(global) * y(global) * (Ergebnis lokal) = " + meinProdukt);
+
+  </script>
+</body>
+
+</html>

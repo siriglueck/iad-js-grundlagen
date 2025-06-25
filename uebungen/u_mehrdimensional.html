@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>u_mehrdimensional</title>
+	<link rel="stylesheet" href="../css/style.min.css">
+</head>
+<body>
+	<script>
+
+		function zz() {
+            let Zufallszahl = Math.random() *  10 + 20;
+            return (Math.floor(Zufallszahl));
+        }
+
+		// assign random numbers to arrays
+		let za = [	[ " ", 0,1,2,3,4] , 
+					[0, zz(),zz(),zz(),zz(),zz()], 
+					[1, zz(),zz(),zz(),zz(),zz()], 
+					[2, zz(),zz(),zz(),zz(),zz()]	];
+
+		// opening table
+		document.write("<table>");
+		
+		// rows
+		for (let x = 0 ; x < za.length ; x++) {
+			document.write("<tr>");
+			// columns
+			for (let y = 0 ; y < za[x].length ; y++) {
+				document.write("<td>" + za[x][y] + "</td>");
+			}
+			document.write("</tr>");
+		}
+		
+		// closing table
+		document.write("</table>");	
+
+
+
+	</script>
+</body>
+</html>

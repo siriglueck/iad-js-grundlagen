@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag'n'drop</title>
+    <link rel="stylesheet" href="../css/style.min.css">
+    <style>
+        .dropzone {
+            width: 300px;
+            min-height: 70px;
+            padding: 10px;
+            border: 1px solid #666;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Drag'n'drop</h1>
+
+    <div class="dropzone"></div>
+
+    <img id="draggedItem" src="images/bild.jpg" alt="Baby Yoda Drink" draggable="true">
+
+    <script>
+        const dropzone = document.querySelector(".dropzone");
+        const draggedItem = document.querySelector("#draggedItem");
+
+        draggedItem.ondragstart = (event) => {
+            console.log(event.target.id);
+            event.dataTransfer.setData("ID", event.target.id);
+            console.log(event.dataTransfer);
+        }
+
+        dropzone.ondragover = (event) => {
+            event.preventDefault();
+            event.currentTarget.style = "background-color: pink;";
+        }
+
+        dropzone.ondrop = (event) => {
+            event.preventDefault();
+            const data = event.dataTransfer.getData("ID");
+            console.log(event.target);
+            event.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+
+</html>

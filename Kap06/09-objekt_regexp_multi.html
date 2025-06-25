@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekt RegExp</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    let Text = "Frau Klößer hat mehrere Buchbestellungen im Wert von 49.90€, 149.90€, 65.35€ und 400.00€ aufgegeben.";
+
+    document.write(Text + "<br><br>Die Bestellwerte im einzeln:<br><hr />");
+
+    let Suchmuster = new RegExp(/\d+\.\d{2}€/g);
+    let Bestellwerte = Text.match(Suchmuster);
+
+    for (let i = 0; i < Bestellwerte.length; i++)
+      document.write(Bestellwerte[i] + "<br>");
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Anweisungen und Operatoren für Objekte</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h3>Kontrolle, ob Eigenschaften existieren</h3>
+  <script>
+    function Kunde(name) {
+      this.name = name;
+    }
+    var kd = new Kunde('Meier');
+    if (kd.name)
+      document.write("Die Eigenschaft 'Name' im Objekt 'Kunde' existiert.<br>");
+    if (!kd.vorname)
+      document.write("Die Eigenschaft 'Vorname' im Objekt 'Kunde' existiert nicht.<br>");
+  </script>
+
+  <h3>Ausgabe der Eigenschaften mit "with"</h3>
+  <script>
+    // with-Anweisung kann die Ausführungsgeschwindigkeit des Skriptes negativ beeinflussen.
+    function Kunde(name, vorname) {
+      this.name = name;
+      this.vorname = vorname;
+    }
+    var kd = new Kunde('Meier', 'Hans');
+    with (kd) {
+      document.write("Der Vorname lautet: " + vorname + "<br>");
+      document.write("Der Nachname lautet: " + name + "<br>");
+    }
+  </script>
+
+
+  <h3>Objekteigenschaften auslesen mit "for... in..."</h3>
+  <script>
+    function Kunde(name, vorname, alter, geschlecht) {
+      this.name = name;
+      this.vorname = vorname;
+      this.alter = alter;
+      this.geschlecht = geschlecht;
+    }
+    var kd = new Kunde('Meier', 'Hans', 65, 'männlich');
+    for (var laufvariable in kd)
+      document.write("Name: " + laufvariable + " Wert: " + kd[laufvariable] + "<br>");
+  </script>
+
+  <h3>Objekteigenschaften suchen mit "in"</h3>
+  <script>
+    function Kunde(name, vorname, alter, geschlecht) {
+      this.name = name;
+      this.vorname = vorname;
+      this.alter = alter;
+      this.geschlecht = geschlecht;
+    }
+    var kd = new Kunde('Meier', 'Hans', 65, 'männlich');
+    if ("alter" in kd)
+      document.write("Das 'Kunde'-Objekt  in der Variable 'kd' besitzt eine Eigenschaft 'Alter'.<br>");
+    if ("haarschnitt" in kd)
+      document.write("Das 'Kunde'-Objekt  in der Variable 'kd' besitzt eine Eigenschaft 'Haarschnitt'.<br>")
+    else
+      document.write("Das 'Kunde'-Objekt  in der Variable 'kd' besitzt keine Eigenschaft 'Haarschnitt'.<br>")
+
+  </script>
+
+
+  <h3>Objektinstanz kontrollieren mit "instanceof"</h3>
+  <script>
+    function Kunde() {
+    }
+    var kd = new Kunde();
+    if (kd instanceof Kunde)
+      document.write("kd ist eine Instanz vom Konstruktor 'Kunde'.<br>");
+  </script>
+
+</body>
+
+</html>

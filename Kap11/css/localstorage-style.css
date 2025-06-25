@@ -1,0 +1,60 @@
+/* gloria-hallelujah-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Gloria Hallelujah';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/gloria-hallelujah-v17-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/gloria-hallelujah-v17-latin-regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/gloria-hallelujah-v17-latin-regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/gloria-hallelujah-v17-latin-regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/gloria-hallelujah-v17-latin-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/gloria-hallelujah-v17-latin-regular.svg#GloriaHallelujah') format('svg');
+    /* Legacy iOS */
+}
+
+body {
+    background-color: #ddd;
+    font-family: 'Gloria Hallelujah', Trebuchet MS, Arial, sans-serif;
+    font-size: 100%;
+}
+
+#box {
+    width: 300px;
+    background: #fff955;
+    background: -moz-linear-gradient(top, #fefbb0, #fff955);
+    background: -webkit-linear-gradient(top, #fefbb0, #fff955);
+    background: -o-linear-gradient(top, #fefbb0, #fff955);
+    background: -ms-linear-gradient(top, #fefbb0, #fff955);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    -o-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    font-size: 12px;
+    padding: 0 25px 25px;
+    margin-bottom: 12px;
+}
+
+#box h1 {
+    margin: 0;
+    padding-top: 10px;
+}
+
+#box ol {
+    margin: 1em 0 0;
+    padding: 0 0 0 25px;
+}
+
+#box ol li {
+    font-size: 16px;
+}
