@@ -6,7 +6,21 @@
   <title>Ereignisabfragen: onmouseover, onmouseout</title>
   <link rel="stylesheet" href="../css/style.min.css">
   <script>
+    // DOMContentLoaded ist ein Ereignis, welches gefeuert wird wenn das komplette DOM ohne aller eingebunden Skripte und Medien geladen wurde.
+    document.addEventListener("DOMContentLoaded", _ => {
+      // Zugriff auf das Bild per Objektfeld
+      document.images[0].src = "images/b1.jpg";
 
+      // Zugriff auf das Bild per ID
+      let b = document.querySelector("#b1");
+
+      b.onmouseover = _ => {
+        b.src = "images/b3.jpg";
+      }
+      b.onmouseout = _ => {
+        b.src = "images/b1.jpg";
+      }
+    });
   </script>
 </head>
 

@@ -6,7 +6,12 @@
   <title>Ereignisbehandlung</title>
   <link rel="stylesheet" href="../css/style.min.css">
   <script>
-
+    document.addEventListener("DOMContentLoaded", _ => {
+      document.addEventListener("keypress", (evt) => {
+        let answer = document.querySelector("#antwort");
+        answer.innerHTML = "Gedrückter Tastaturcode: " + evt.which;
+      });
+    });
   </script>
 </head>
 

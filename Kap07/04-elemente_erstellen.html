@@ -14,25 +14,31 @@
   <script>
 
     // 1. src- und alt-Attribut erzeugen und Werte zuweisen
-    
+    let bildquelle = document.createAttribute("src");
+    bildquelle.nodeValue = "images/b1.jpg"
+
+    let alternativtext = document.createAttribute("alt");
+    alternativtext.nodeValue = "Am Fluss";
 
     // 2. Bild-Element erzeugen
-    
+    let b1 = document.createElement("img");
 
     // 3. Dem Bild-Element die Attributknoten zuweisen
-    
+    b1.setAttributeNode(bildquelle);
+    b1.setAttributeNode(alternativtext);
 
     // 4. Ein Überschrift-Element erzeugen
-    
+    let u2 = document.createElement("h2");
 
     // 5. Einen Textknoten erstellen
-    
+    let u2text = document.createTextNode("Erstellen von Knoten mit den Methoden des DOM");
 
     // 6. Der Überschrift den Textknoten als Kind-Element übergeben
-    
+    u2.appendChild(u2text);
 
     // Überschrift und Bild dem body-Element hinzufügen
-    
+    document.querySelector("body").appendChild(u2);
+    document.querySelector("body").appendChild(b1);
 
   </script>
 </body>

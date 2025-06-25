@@ -18,7 +18,20 @@
     }
 
     // ! Hier Script eintragen
-    
+    // Funktionsreferenz: Bezeichner der Funkion OHNE KLAMMERN!!!
+    window.setTimeout( zeitVorbei, 5000 );
+
+    // Countdown!
+    let i = 5;
+    function countdown() {
+      if( i > 0 ) {
+        i--;
+        document.write(i, '<br>');
+        // rekursiver Funktionsaufruf
+        setTimeout(countdown, 1000);
+      }
+    }
+    countdown();
 
   </script>
 </body>

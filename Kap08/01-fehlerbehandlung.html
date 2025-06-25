@@ -16,7 +16,7 @@
   <script>
     "use strict";
     
-    function fehlerbehandlung( fehler, datei, zeile, spalte, fehlerobjekt ) {
+    /* function fehlerbehandlung( fehler, datei, zeile, spalte, fehlerobjekt ) {
       document.getElementById("err").innerHTML = "<p><b>Fehler: </b>" + fehler
       + "<br>Datei: " + datei
       + "<br>Zeile: " + zeile
@@ -27,10 +27,10 @@
     }
 
     // ! onerror funktioniert unter Umständen nicht bei allen in der Praxis eingestzten Browsern
-    onerror = fehlerbehandlung;
+    onerror = fehlerbehandlung; */
 
     // empfohlen:
-    /* function errorHandler(errorEvent) {
+    function errorHandler(errorEvent) {
       let err = "<p><b>Fehler</b>:<br>Meldung: " + errorEvent.message
         + "<br>Datei: " + errorEvent.filename
         + "<br>Zeile: " + errorEvent.lineno
@@ -42,7 +42,7 @@
       errorEvent.preventDefault();
     }
 
-    window.addEventListener("error", errorHandler); */
+    window.addEventListener("error", errorHandler);
 
 
     const Y = 42;
