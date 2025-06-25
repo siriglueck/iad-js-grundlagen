@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übung Verknüpft</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h1>Übung Verknüpft</h1>
+  <h2>Variante 1 mit logischem ODER</h2>
+  <script>
+    let zahl = parseFloat(prompt("Bitte eine Zahl zwischen 50.0 und 100.0 eingeben!"));
+
+    if (!isNaN(zahl)) {
+      if (zahl < 50 || zahl > 100) {
+        document.write("<p class='danger'>Die Zahl <b>" + zahl + "</b> liegt <b>nicht</b> im Bereich</p>");
+      } else {
+        document.write("<p class='success'>Die Zahl <b>" + zahl + "</b> liegt im Bereich</p>");
+      }
+    }
+  </script>
+  <h2>Variante 2 mit logischem UND</h2>
+  <script>
+
+    if (zahl) {
+      if (zahl >= 50 && zahl <= 100) {
+        document.write("<p class='success'>Die Zahl <b>" + zahl + "</b> liegt im Bereich</p>");
+      } else {
+        document.write("<p class='danger'>Die Zahl <b>" + zahl + "</b> liegt <b>nicht</b> im Bereich</p>");
+      }
+    }
+  </script>
+</body>
+
+</html>

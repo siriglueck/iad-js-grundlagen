@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übung Funktion</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    function mittelwert(z1, z2, z3) {
+      return (z1 + z2 + z3) / 3;
+    }
+  </script>
+</head>
+
+<body>
+  <script>
+    let zahl1 = parseFloat(prompt("Bitte eine Zahl eingeben!"));
+    let zahl2 = parseFloat(prompt("Bitte eine weitere Zahl eingeben!"));
+    let zahl3 = parseFloat(prompt("Bitte noch eine weitere Zahl eingeben!"));
+
+    document.write("Der Mittelwert von " + zahl1 + ", " + zahl2 + " und " + zahl3 + " ist ");
+    document.write(mittelwert(zahl1, zahl2, zahl3));
+  </script>
+</body>
+
+</html>

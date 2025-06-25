@@ -26,8 +26,9 @@
     jahr = zeit.getFullYear();
     monat = zeit.getMonth() + 1;
     tag = zeit.getDate();
+    
 
-    document.write("Heute ist der " + tag + "." + monat + "." + jahr + "<br>");
+    document.write("Heute ist der " + tag + "." + monat.toString().padStart(2, '0') + "." + jahr + "<br>");
 
     dann = zeit.getTime() + (150 * 24 * 60 * 60 * 1000); // 150 Tage in Millisekunden umrechnen
 

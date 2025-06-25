@@ -5,4 +5,4 @@
 let lambda1 = (x, y) => x * y;
 
 
-console.log(lambda1(11, 2)); // Aufruf der Lambda-Funktion
+console.log(lambda1(11, 3)); // Aufruf der Lambda-Funktion

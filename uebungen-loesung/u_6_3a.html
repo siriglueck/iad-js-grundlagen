@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kapitel 6, Übung 3a</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="stylesheet" href="css/zeit.css">
+  <script>
+    function zeigeZeit() {
+      let time = new Date();
+      /**
+       * "0" + time.getMinutes() generiert eine Zeichenkette aus 3 numerischen Zeichen z.B. 012 oder 06 
+       * slice(-2) liefert die letzten beiden Zeichen dieser Zeichenkette z.B. 12 oder 06
+       * */
+      let m = ("0" + time.getMinutes()).slice(-2);
+      let s = ("0" + time.getSeconds()).slice(-2);
+      let h = ("0" + time.getHours()).slice(-2);
+      let out = h + ":" + m + ":" + s;
+
+      document.title = out;
+      document.querySelector("#zeit").innerHTML = out;
+      setTimeout("zeigeZeit()", 1000);
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Zeitanzeige mit führenden Nullen</h2>
+  <div id="zeit">00:00:00</div>
+  <script>
+    zeigeZeit();
+  </script>
+</body>
+
+</html>

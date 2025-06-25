@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Verzweigungen mit if und else</title>
+   <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+   <h1>Verzweigungen mit <code>if</code> und <code>else</code></h1>
+   <script>
+      const a = 12, b = 7;
+
+      // 1: Einfache Verzweigung
+      /**
+       * ! Hinweis:
+       * ? Sollte bei Verzweigungen oder Schleifen nur eine einzige Anweisung angegeben werden
+       * ? können die geschweiften Klammern weggelassen werden.
+       * 
+       * ? Diese Schreibweise wird allerdings nicht empfohlen.
+       * ? Viele Code-Konventionen legen explizit fest, dass auch in einem solchen Fall
+       * ? Klammern gesetzt werden sollen.
+       * 
+       * ? In einigen Beispiele wird allerdings aus Einfachheitsgründen diese Schreibweise benutzt
+       */
+      if (a > b)
+         document.write("<p>1: a ist größer als b</p>");
+
+      // 2: Einfache Verzweigung, mit else
+      if (a < b)
+         document.write("<p>2: a ist kleiner als b</p>");
+      else
+         document.write("<p>2: a ist nicht kleiner als b</p>");
+
+      // 3: Einfache Verzweigung, mehrere Anweisungen im Block
+      if (a > b) {
+         document.write("<p>3: a ist größer als b<br>");
+         document.write("3: Eine weitere Zeile</p>");
+      }
+
+      // 4: Mehrfache Verzweigung
+      if (a > b)
+         document.write("<p>4: a ist größer als b</p>");
+      else if (a < b)
+         document.write("<p>4: a ist kleiner als b</p>");
+      else
+         document.write("<p>4: a ist gleich b</p>");
+
+      // 5: Zeichenketten
+      const land = "Spanien";
+      if (land == "Spanien")
+         document.write("<p>5: Land ist Spanien</p>");
+      if (land != "Spanien")
+         document.write("<p>5: Land ist nicht Spanien</p>");
+
+      // 6: Ternärer Operator
+      const groesser = (a > b) ? a : b;
+      document.write("<p>6: Die größere Zahl ist " + groesser + "</p>");
+   </script>
+</body>
+
+</html>

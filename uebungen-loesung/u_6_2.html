@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kapitel 6, Übung 2</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script src="js/tagesspruch.js"></script>
+  <script>
+    function tagesSpruch(a) {
+      const rand = Math.floor(Math.random() * a.length);
+      return a[rand];
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Spruch des Tages</h2>
+
+  <script>
+    let ts = tagesSpruch(weisheiten);
+    document.write("<p>" + ts + "</p>");
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kapitel 6, Übung 1.2</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    function searchReplace(s) {
+      s = s.replace(/ä/g, "ae");
+      s = s.replace(/ö/g, "oe");
+      s = s.replace(/ü/g, "ue");
+      return s;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Suchen und Ersetzen mit <code>RegExp</code></h1>
+
+  <script>
+    let zk = "Häufig bzw. öfter übernachten wir in Gasthöfen. Die Nächte sind dort immer besonders schön.";
+
+    with (document) {
+      write("<p>Original: ", zk, "</p>");
+      zk = searchReplace(zk);
+      write("<p>Ersetzt: ", zk, "</p>");
+    }
+  </script>
+</body>
+
+</html>

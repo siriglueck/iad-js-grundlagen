@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Übung 1 Kapitel 5</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script src="js/Raumschiff.js"></script>
+</head>
+
+<body>
+  <h3>Und es bewegt sich doch</h3>
+  <script>
+
+    var enterprise = new Raumschiff("U.S.S. Enterprise", "NCC-1701");
+
+    document.write("<p>Das Raumschiff ist von der Erde gestartet:<br>");
+
+    enterprise.entfernen(50);
+    enterprise.entfernen(100);
+    enterprise.zurueck(50);
+    enterprise.zurueck(100);
+    enterprise.zurueck(50);
+
+    document.write("</p>");
+
+    for( eig in enterprise ) {
+      document.write( "Name: " + eig + ", Wert: " + enterprise[eig] + "<br>" );
+    }
+
+  </script>
+</body>
+
+</html>

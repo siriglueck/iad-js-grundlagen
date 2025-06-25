@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Übung, mehrdim. Feld</title>
+   <link rel="stylesheet" href="../css/style.min.css">
+   <style>
+      td { text-align: center; }
+   </style>
+</head>
+<body><p>
+   <script>
+      const za = new Array(4); // definiert die Zeilen (tr)
+      for (let i=0; i<za.length; i++)
+      {
+         za[i] = new Array(6); // definiert die Zellen (td)
+      }
+
+      /* Tabelle mit Spaltennummern in der ersten Zeile */
+      document.write("Feld: ");
+      // Tabelle, erste Zeile und erste Zelle werden angelegt. Die erste Zelle bleibt leer.
+      document.write("<table>");
+      document.write("  <tr>");
+      document.write("     <td>&nbsp;</td>");
+
+      // Schleife für die Spaltenüberschriften über das Array der Index-Position 0 des äußeren Arrays
+      for (let k=0; k<za[0].length; k++)
+      {
+         // Indizes des inneren Arrays werden in die Zellen der erste Zeile geschrieben
+         document.write("<th>" + k + "</th>");
+      }
+      document.write("</tr>");
+
+      /* Folgende Zeilen mit Zeilennummern (in der ersten Zelle) und Werten (in den folgenden Zellen) */
+      for (let i=0; i<za.length; i++)
+      {
+         // Indizes des äußeren Arrays werden in die erste Zelle der aktuellen Zeile als Zeilenüberschriften geschrieben
+         document.write("<tr>"); 
+         document.write("  <th>" + i + "</th>");            
+
+         // Schleife über das innere Array der aktuellen Zeilenposition für die Werte-Zellen
+         for (let k=0; k<za[i].length; k++)
+         {
+            // inneres Array wird mit Zufallszahlen zwischen 20 und 30 (exklusive) gefüllt
+            za[i][k] = Math.floor(Math.random() * 10 + 20);
+            // Inhalt des inneren Arrays wird in die Werte-Zellen geschrieben
+            document.write("<td>" + za[i][k] + "</td>");           
+         }
+         document.write("</tr>");
+      }
+      document.write("</table>");
+      document.write("<br>");
+
+      /* Maximum ermitteln und ausgeben */
+      // Variable mx wird mit dem ersten Wert des inneren Arrays an Indexposition 0 gefüllt (0)
+      let mx = za[0][0];
+      // Schleife über das äußere Array (Zeilen)
+      for(let i=0; i<za.length; i++)
+      {
+         // Schleife über das innere Array (Zellen)
+         for(let k=0; k<za[i].length; k++)
+         {
+            // Prüfe, ob aktueller Wert des inneren Arrays größer als der Wert der Variablen mx ist.
+            if(za[i][k] > mx)
+            {
+               // Wert ist größer und wird der Variablen mx zugewiesen
+               mx = za[i][k];
+            }
+         }
+      }
+      // Wert von mx wird in das Dokument ausgegeben
+      document.write("Maximum: " + mx + "<br>");
+
+      /* Position(en) des Maximums ermitteln und ausgeben */
+      document.write("Position(en) des Maximums: ");
+
+      // Schleife über das äußere Array (Zeilen)
+      for(let i=0; i<za.length; i++)
+      {
+         // Schleife über das innere Array (Zellen)
+         for(let k=0; k<za[i].length; k++)
+         {
+            // Prüfe, ob aktueller Wert des inneren Arrays gleich dem Wert der Variablen mx ist.
+            if(za[i][k] == mx)
+            {
+               // Wert ist gleich. Werte des aktuellen Indizes der Zeile (i) und der Zelle(k) wird ausgegeben
+               document.write(i + "/" + k + " ");
+            }
+         }
+      }
+      document.write("<br>");
+   </script></p>
+</body>
+</html>

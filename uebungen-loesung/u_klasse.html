@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übung Klasse</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script src="js/Rechteck.js"></script>
+</head>
+
+<body>
+  <p>
+    <script>
+      const rEins = new Rechteck(50, 10, 100, 200);
+      document.write(rEins + "<br>");
+      rEins.verbreitern(50);
+      document.write(rEins + "<br>");
+      rEins.erhoehen(20);
+      document.write(rEins + "<br>");
+      rEins.skalieren(1.5);
+      document.write(rEins + "<br>");
+      rEins.verschieben(20, 80);
+      document.write(rEins);
+    </script>
+  </p>
+</body>
+
+</html>

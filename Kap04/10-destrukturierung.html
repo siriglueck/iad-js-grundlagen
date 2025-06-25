@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destrukturierung</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    function tauschen(x, y) {
+      document.write("Parameter nach der Übergabe: x=", x, ", y=", y, "<br>");
+      const temp = x;
+      x = y;
+      y = temp;
+      document.write("Parameter vor der Rückgabe: x=", x, ", y=", y, "<br>");
+      let z = 0;
+      return [x, y];
+    }
+  </script>
+</head>
+<body>
+  <h1>Destrukturierung - Funktionen mit mehreren Rückgabewerten</h1>
+  <p>
+    <script>
+      let a = 7, b = 12;
+      document.write("Variablen: a=", a, ", b=", b, "<br>");
+      [a, b] = tauschen(a, b);
+      document.write("Variablen nach dem Tausch: a=", a, ", b=", b, "<br>");
+    </script>
+  </p>
+</body>
+</html>

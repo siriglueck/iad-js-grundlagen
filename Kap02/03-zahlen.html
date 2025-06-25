@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>Zahlen</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <h1>numerische Werte</h1>
+  <p>
+    <script>
+      let zahl = 42;
+      const nochEineZahl = zahl + 30.8;
+      const kleineZahl = -3.7e-3;
+      const grosseZahl = 5.2e6;
+      const vieleZiffern = 3_530_755.388_725;
+
+      document.write("Erste Zahl: ", zahl, "<br>");
+      document.write("noch eine Zahl: ", nochEineZahl, "<br>");
+      document.write("kleine Zahl: ", kleineZahl, "<br>");
+      document.write("grosse Zahl: ", grosseZahl, "<br>");
+      document.write("viele Ziffern: ", vieleZiffern, "<br>");
+
+      document.write("falsche Addition: " + nochEineZahl + 25 + "<br>");
+      document.write("richtige Addition: " + (nochEineZahl + 25) + "<br>");
+      document.write("richtige Addition: ", nochEineZahl + 25, "<br>");
+    </script>
+  </p>
+</body>
+
+</html>

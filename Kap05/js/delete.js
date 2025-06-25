@@ -1,7 +1,7 @@
 function Kunde(name) {
     this.name = name;
 }
-kd = new Kunde("Meier");
+let kd = new Kunde("Meier");
 console.log(kd.vorname);
 kd.vorname = "Frank"; // neue Eigenschaft hinzufügen
 console.log(kd);
@@ -11,4 +11,4 @@ console.log(kd);
 
 kd.vorname = undefined; // die Eigenschaft wieder entfernen – 
 // alternativer Weg
-console.log(kd.vorname);
+console.log(kd);

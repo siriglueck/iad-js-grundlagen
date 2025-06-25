@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kapitel 6, Übung 1.2b</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    /** searchReplace()
+     * Ersetzt bestimmte Zeichenketten
+     * 
+     * @param string strg   Zeichenkette, in welcher ersetzt werden soll
+     * @param objekt pairs  Suchen- und Ersetzen-Paare
+     * 
+     * @return string       Zeichenkette mit Ersetzungen
+     */
+    function searchReplace(strg, pairs) {
+      // Konstante mit den zu ersetzenden Suchbegriffen (Eigenschaften des pairs-Objektes) durch | getrennt mit dem Flag g für globale Suche
+      const reg = new RegExp(Object.keys(pairs).join("|"), "g");
+      console.log(reg);
+
+      /**
+       * replace-Methode des String-Objektes wird aufgerufen
+       * 1. Parameter: das RegExp-Objekt reg 
+       * 2. Parameter: anonyme Funktion (Array-Funktion) 
+       *    mit Parameter matched (die Suchen-Zeichenkette) 
+       *    gibt den Wert (Ersetzen-Zeichenkette) an die replace-Methode zurück
+       * 
+       * replace-Methode gibt die Zeichenkette mit den Ersetzungen zurück
+       * */
+      
+      return strg.replace(reg, (matched) => {
+        console.log(matched, pairs[matched]);
+        return pairs[matched];
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Suchen und Ersetzen <code>RegExp</code> (flexibel)</h1>
+
+  <script>
+    let strg = "Häufig bzw. öfter übernachten wir in Gasthöfen. Die Nächte sind dort immer besonders schön.";
+
+    // JSON
+    const pairs = {
+      ä: "ae",
+      ö: "oe",
+      ü: "ue",
+      schön: "dunkel"
+    }
+
+    with (document) {
+      write("<p>Original: ", strg, "</p>");
+      strg = searchReplace(strg, pairs);
+      write("<p>Ersetzt: ", strg, "</p>");
+    }
+  </script>
+</body>
+
+</html>

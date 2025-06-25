@@ -10,13 +10,26 @@
 <body>
   <h3>continue</h3>
   <script>
-
+    let count = 0;
+    for( let i = 0; i < 5; i++ ) {
+      if( i === 2 ) {
+        continue; // zum nächsten Durchlauf springen
+      }
+      document.write("i: ", i, "; Ausgabe: ", ++count, "<br>");
+    }
   </script>
 
   <h3>break</h3>
 
   <script>
+    let i = 0;
+    count = 0;
 
+    while( i < 5) {
+      if(i === 2) break;
+      document.write("i: ", i, "; Ausgabe: ", ++count, "<br>");
+      i++;
+    }
     /**
      * ! Übungen
      * ? Kap03 und 

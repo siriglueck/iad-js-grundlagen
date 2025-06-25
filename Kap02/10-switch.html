@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Verzweigung mit switch case</title>
+   <link rel="stylesheet" href="js4.css">
+</head>
+
+<body>
+   <h1>Verzweigung mit switch case</h1>
+   <script>
+      
+      const land = prompt("Bitte ein Land eingeben:", "Deutschland");
+      let stadt;
+
+      switch(land) {
+         case "Italien":
+            stadt = "Rom";
+            break;
+         case "England":
+         case "Whales":
+         case "Schottland":
+            stadt = "London";
+            break;
+         case "Deutschland":
+            stadt = "Berlin";
+            break;
+         default:
+            stadt = "unbekannt";
+      }
+
+      document.write("Die Hauptstadt von ", land, " ist ", stadt);
+
+      /**
+       * ! Übungen
+       * ? Übungsaufgaben u_if, u_verknuepft
+       */
+   </script>
+</body>
+
+</html>

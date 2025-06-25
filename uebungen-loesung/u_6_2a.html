@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapitel 6, Übung 2a</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script src="js/tagesspruch2.js"></script>
+  <script>
+
+    /** tagesSpruch() 
+     * Mischt zufällig zwei Teile aus zwei Zeichenketten
+     * 
+     * @param array a   Ein mehrdimensionales indiziertes Array mit einer Anzahl an Arrays,
+     *                  welche jeweils zwei Teile eines Spruchs enthalten
+     * 
+     * @return array    Ein indiziertes Array mit 2 Elementen, wobei
+     *                  0: den gemischte Spruch
+     *                  1: die beiden Originalsprüche
+     *                  als String enthalten
+     * 
+    */
+    function tagesSpruch(a) {
+      // Zufallszahlen (Int) generieren
+      const rand1 = Math.floor(Math.random() * a.length);
+      const rand2 = Math.floor(Math.random() * a.length);
+      
+      // Original Sprüche speichern
+      const o1 = a[rand1][0] + a[rand1][1];
+      const o2 = a[rand2][0] + a[rand2][1];
+      
+      // ersten Teil von Spruch 1 und zweiten Teil von Spruch 2 speichern
+      const firstHalf = a[rand1][0];
+      const secondHalf = a[rand2][1];
+
+      // Rückgabe eines Arrays
+      // 0: gemischter Spruch
+      // 1: Originalsprüche mit Zeilenumbruch zur Kontrolle
+      return [firstHalf + " " + secondHalf, o1 + "<br>" + o2];
+    }
+  </script>
+</head>
+
+<body>
+  <div id="info"></div>
+  <script>
+    // Variablen mit leerer Zeichenkette definieren
+    let ts = ori = "";
+
+    // die beiden von der Funktion gelieferten Array-Elemente in diese Variablen speichern
+    [ts, ori] = tagesSpruch(weisheiten);
+
+    // Originalsprüche und den gemischten Spruch ausgeben
+    document.querySelector("#info").innerHTML = "<p>Die Originale: <br>" + ori + "</p>";
+    document.querySelector("#info").innerHTML += "<p>Gemischt: <br>" + ts + "</p>";
+    
+  </script>
+</body>
+
+</html>

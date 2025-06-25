@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Eingabe prüfen</title>
+   <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+   <h1>Eingabe prüfen</h1>
+   <p>
+      <script>
+         const zufall = Math.random();
+         const eingabe = prompt("Bitte eine Zahl von 0 bis 1, ohne 1");
+         const zahl = parseFloat(eingabe);
+         const abstand = Math.abs(zufall - zahl);
+
+         if (eingabe == null)
+            document.write("Abbruch");
+         else if (eingabe == "")
+            document.write("Keine Eingabe");
+         else if (isNaN(eingabe)) // NaN = not a number
+            document.write("Keine gültige Zahl");
+         else if (zahl < 0 || zahl >= 1)
+            document.write("Keine Zahl im gültigen Bereich");
+         else if (abstand < 0.1)
+            document.write("Sie sind nah dran");
+         else
+            document.write("Sie sind weit weg");
+
+         document.write("<br><br>Zufall: " + zufall + "<br>");
+         document.write("Eingabe: " + eingabe + "<br>");
+         document.write("isNaN(): " + isNaN(eingabe) + "<br>");
+         document.write("Zahl: " + zahl + "<br>");
+         document.write("Differenz: " + (zufall - zahl) + "<br>");
+         document.write("Abstand: " + abstand);
+      </script>
+   </p>
+</body>
+
+</html>

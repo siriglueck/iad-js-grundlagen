@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Verknüpfung</title>
+   <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+   <h1>Verknüpfung</h1>
+   <script>
+      const a = 12;
+
+      if (a >= 10 && a <= 20)
+         document.write("<p>1: zwischen 10 und 20</p>");
+      else
+         document.write("<p>1: nicht zwischen 10 und 20</p>");
+
+      if (a < 10 || a > 20)
+         document.write("<p>2: nicht zwischen 10 und 20</p>");
+      else
+         document.write("<p>2: zwischen 10 und 20</p>");
+
+      if (!(a >= 10 && a <= 20))
+         document.write("<p>3: nicht zwischen 10 und 20</p>");
+      else
+         document.write("<p>3: zwischen 10 und 20</p>");
+   </script>
+</body>
+
+</html>

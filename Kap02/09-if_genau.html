@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Wert und Typ prüfen</title>
+   <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+   <h1>Wert und Typ prüfen</h1>
+   <p>
+      <script>
+         const a = 4711;
+         const b = "4711";
+         const c = 4711;
+         const d = true;
+
+         document.write("<p>a: " + a + ", " + typeof a + "<br>");
+         document.write("b: " + b + ", " + typeof b + "<br>");
+         document.write("c: " + c + ", " + typeof c + "<br>");
+         document.write("d: " + d + ", " + typeof d + "<br><br>");
+
+         if (a == b)
+            document.write("a == b<br>");
+         if (a === c)
+            document.write("a === c<br>");
+
+         if (a === b)
+            document.write("a === b");
+         else
+            document.write("Nicht a === b");
+      </script>
+   </p>
+</body>
+
+</html>

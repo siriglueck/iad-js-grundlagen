@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Übung, eindim. Feld</title>
+   <link rel="stylesheet" href="../css/style.min.css">
+</head>
+<body><p>
+   <script>
+      const za = new Array(15);
+
+      /* Tabelle mit Feld */
+      document.write("Feld: ");
+      document.write("<table><tr>");
+      for (let i=0; i<za.length; i++)
+         document.write("<td>" + i + "</td>");
+
+      document.write("</tr><tr>");
+      for (let i=0; i<za.length; i++)
+      {
+         za[i] = Math.floor(Math.random() * 10 + 20);
+         document.write("<td>" + za[i] + "</td>");
+      }
+      document.write("</tr></table>");
+      document.write("<br>");
+
+      /* Maximum ermitteln und ausgeben */
+      let mx = za[0];
+      for(let i=0; i<za.length; i++)
+         if(za[i] > mx)
+            mx = za[i];
+      document.write("Maximum: " + mx + "<br>");
+
+      /* Position(en) des Maximums ermitteln und ausgeben */
+      document.write("Position(en) des Maximums: ");
+      for(let i=0; i<za.length; i++)
+         if(za[i] == mx)
+            document.write(i + "; ");
+      document.write("<br>");
+   </script></p>
+</body>
+</html>

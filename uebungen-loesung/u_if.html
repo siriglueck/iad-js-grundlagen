@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übung If</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+</head>
+
+<body>
+  <script>
+    let zahl1 = parseFloat(prompt("Bitte eine Zahl eingeben!"));
+    let zahl2 = parseFloat(prompt("Bitte eine weitere Zahl eingeben!"));
+
+    document.write("Ihre Eingaben: " + zahl1 + " und " + zahl2 + "<br>");
+
+    if (zahl1 > zahl2) {
+      document.write("Die größere Zahl ist " + zahl1);
+    } else if (zahl1 == zahl2) {
+      document.write("Die beiden Zahlen sind gleich.");
+    } else {
+      document.write("Die größere Zahl ist " + zahl2);
+    }
+  </script>
+</body>
+
+</html>

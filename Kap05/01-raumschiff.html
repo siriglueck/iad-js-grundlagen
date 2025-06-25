@@ -14,13 +14,17 @@
     // klassische Methode: Prototyping
     // die Funktion wirkt gleichzeitig als Konstructor
     function Raumschiff(name, modell) {
-      // 
+      // Eigenschaften
       this.name = name;
       this.modell = modell;
     }
 
     /* Hier Objekte erzeugen */
+    let enterprise = new Raumschiff("U.S.S Enterprise", "NCC-1701");
+    let voyager = new Raumschiff("U.S.S Voyager", "NCC-74656");
 
+    document.write("<br>", enterprise.name, ", Modell: ", enterprise.modell);
+    document.write("<br>", voyager.name, ", Modell: ", voyager.modell);
 
   </script>
 </body>

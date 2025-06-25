@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapitel 6, Übung 1.1</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    function searchReplace(s) {
+      let output = "";
+      for(let i = 0; i < s.length; i++) {
+        if(s.charAt(i) === "ä") {
+          output += "ae";
+        } else if(s.charAt(i) === "ü") {
+          output += "ue";
+        } else if(s.charAt(i) === "ö") {
+          output += "oe";
+        } else {
+          output += s.charAt(i);
+        }
+      }
+      return output;
+    }
+  </script>
+</head>
+<body>
+  <h1>Suchen und ersetzen mit Schleife</h1>
+  <script>
+    let zk = "Häufig bzw. öfter übernachten wir in Gasthöfen. Die Nächte sind dort immer besonders schön.";
+
+    with(document) {
+      write("<p>Original: ", zk, "</p>");
+      zk = searchReplace(zk);
+      write("<p>Ersetzt: ", zk, "</p>");
+    }
+  </script>
+</body>
+</html>

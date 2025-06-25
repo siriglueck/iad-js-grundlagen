@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kapitel 6, Übung 1.1</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <script>
+    function searchReplace(s) {
+      s = s.replace("ä", "ae");
+      s = s.replace("ö", "oe");
+      s = s.replace("ü", "ue");
+      return s;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Suchen und Ersetzen mit <code>replace()</code></h1>
+  <p><i>Hierbei wird immer nur das erste Vorkommen ersetzt!</i></p>
+
+  <script>
+    let zk = "Häufig bzw. öfter übernachten wir in Gasthöfen. Die Nächte sind dort immer besonders schön.";
+
+    with (document) {
+      write("<p>Original: ", zk, "</p>");
+      zk = searchReplace(zk);
+      write("<p>Ersetzt: ", zk, "</p>");
+    }
+  </script>
+</body>
+
+</html>

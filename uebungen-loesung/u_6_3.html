@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kapitel 6, Übung 3</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="stylesheet" href="css/zeit.css">
+  <script>
+    function zeigeZeit() {
+      let time = new Date();
+      let h = time.getHours();
+      let m = time.getMinutes();
+      let s = time.getSeconds();
+      let out = h + ":" + m + ":" + s;
+
+      document.title = out;
+      // Zusätzliche Ausgabe im 
+      document.querySelector("#zeit").innerHTML = out;
+      setTimeout("zeigeZeit()", 1000);
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Zeitanzeige</h2>
+  <div id="zeit">00:00:00</div>
+  <script>
+    zeigeZeit();
+  </script>
+</body>
+
+</html>
