@@ -9,7 +9,6 @@
 
 	<script>
 
-
 		function createTable() {
 
 			// create table
@@ -17,26 +16,26 @@
 			const numRows = 1;
 			const numCols = 3;
 			let imageID = 1;
-			// run each row
+			// create rows
 			for (let r = 1; r <= numRows; r++) {
 				const row = document.createElement("tr");
 				
-				// run each cell
+				// create columns
 				for (let c = 1; c <= numCols; c++) {
 					const col = document.createElement("td");
 					
-					// create source image
+					// point to image source
 					let imageSource = document.createAttribute("src");
+					// add image path to src
+					imageSource.nodeValue = "images/b"+c+".jpg";
+
 					// create an image
 					let image = document.createElement("img");
-					
-
-					// set source to image
-					imageSource.nodeValue = "images/b"+c+".jpg";
 					image.setAttributeNode(imageSource);
-					
+					// Add image ID
 					image.id = "b"+ imageID;
 					imageID++;
+					// Add Inline-CSS
 					image.style.width = "150px";
 					image.style.height = "auto";
 					// Center horizontally
@@ -44,25 +43,41 @@
 					image.style.marginLeft = "auto";
 					image.style.marginRight = "auto";
 
-
 					
-					// add OnClick on images
+					// add OnClick on each image
 					image.addEventListener('click', () => {
-						// document.body.innerHTML = '';
-						let imageBig = document.createElement("img");
-						document.body.appendChild(imageBig); 
+						// set pointers to containers
+						let divImage = document.querySelector(".img-here")
+						let divInfo = document.querySelector(".img-info")
+						
+						// create an image
+						let imageBig = document.createElement("img"); 
 						imageBig.src = image.src;
+						// set pointers to image info - must come after img creation
+						let imgInfo = imageBig.getAttribute("src");
+
+						// empty containers
+						divImage.innerHTML = "";
+						divInfo.innerHTML = "";
+						
+						// add Inline-CSS to images
 						imageBig.style.width = "auto";
 						imageBig.style.height = "auto";
-						document.body.appendChild(imageBig); 
-					})
+						// Center horizontally
+						imageBig.style.display = "block";
+						imageBig.style.marginLeft = "auto";
+						imageBig.style.marginRight = "auto";
+						
+						// add what we want to containers
+						divImage.appendChild(imageBig); 
+						divInfo.append(imgInfo);
+						divInfo.style.textAlign = "center";
 
+					})
 
 
 					col.appendChild(image);
 					row.appendChild(col);
-
-
 
 				}
 
@@ -70,7 +85,9 @@
 			}
 
 			document.querySelector("body").appendChild(table);
+
 		}
+
 
 	</script>
 
@@ -78,15 +95,14 @@
 
 <body>
 	<h1>Übungen : Erstellen von DOM-Elementen</h1>
-
-	<!-- <button id="idTabelle">Tabelle erzeugen</button> -->
-
 	<script>
 		createTable();
-		// document.querySelector("#idTabelle").addEventListener("click", createTable);
-
-
 	</script>
+	<div class="img-here"></div>
+	<div>
+		<p class="img-info"></p>
+	</div>
+	
 </body>
 
 </html>
