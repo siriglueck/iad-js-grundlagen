@@ -10,24 +10,29 @@
   <script>
     function anhaengen() {
       // Text- und Elementknoten erzeugen
-
+      const text = document.createTextNode("Angehängt");
+      const absatz = document.createElement("p");
 
       // Textknoten an Elementknoten als Kindknoten anhängen
-
+      absatz.appendChild(text);
+      absatz.setAttribute("style", "font-weight: bold;");
 
       // Erzeugte HTML-Struktur der bestehenden Struktur hinzufügen
+      document.querySelector("body").appendChild(absatz);
 
     }
 
     function einschieben() {
       // Text- und Elementknoten erzeugen
-
+      const text = document.createTextNode("Eingeschoben");
+      const absatz = document.createElement("p");
 
       // Textknoten an Elementknoten als Kindknoten anhängen
-
+      absatz.appendChild(text);
+      absatz.setAttribute("style", "font-style: italic;");
       
       // Erzeugte HTML-Struktur der bestehenden Struktur einschieben
-
+      document.querySelector("body").insertBefore(absatz, document.querySelector("#idAbsatz3"));
     }
   </script>
 </head>

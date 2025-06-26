@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>u-7.12.1</title>
+	<link rel="stylesheet" href="../css/style.min.css">
+
+	<script>
+
+
+		function createTable() {
+
+			// create table
+			const table = document.createElement("table");
+			const numRows = 1;
+			const numCols = 3;
+			let imageID = 1;
+			// run each row
+			for (let r = 1; r <= numRows; r++) {
+				const row = document.createElement("tr");
+				
+				// run each cell
+				for (let c = 1; c <= numCols; c++) {
+					const col = document.createElement("td");
+					
+					// create source image
+					let imageSource = document.createAttribute("src");
+					// create an image
+					let image = document.createElement("img");
+					
+
+					// set source to image
+					imageSource.nodeValue = "images/b"+c+".jpg";
+					image.setAttributeNode(imageSource);
+					
+					image.id = "b"+ imageID;
+					imageID++;
+					image.style.width = "150px";
+					image.style.height = "auto";
+					// Center horizontally
+					image.style.display = "block";
+					image.style.marginLeft = "auto";
+					image.style.marginRight = "auto";
+
+
+					
+					// add OnClick on images
+					image.addEventListener('click', () => {
+						// document.body.innerHTML = '';
+						let imageBig = document.createElement("img");
+						document.body.appendChild(imageBig); 
+						imageBig.src = image.src;
+						imageBig.style.width = "auto";
+						imageBig.style.height = "auto";
+						document.body.appendChild(imageBig); 
+					})
+
+
+
+					col.appendChild(image);
+					row.appendChild(col);
+
+
+
+				}
+
+				table.appendChild(row);
+			}
+
+			document.querySelector("body").appendChild(table);
+		}
+
+	</script>
+
+</head>
+
+<body>
+	<h1>Übungen : Erstellen von DOM-Elementen</h1>
+
+	<!-- <button id="idTabelle">Tabelle erzeugen</button> -->
+
+	<script>
+		createTable();
+		// document.querySelector("#idTabelle").addEventListener("click", createTable);
+
+
+	</script>
+</body>
+
+</html>

@@ -37,11 +37,11 @@
 
     wrapper.addEventListener("click", evt => {
       output.innerHTML += "Auf den <b>Wrapper</b> wurde geklickt.<br>";
-    });
+    }, true);
 
     body.addEventListener("click", evt => {
       output.innerHTML += "Auf den <b>Body</b> wurde geklickt.<br>";
-    }, true);
+    });
 
     html.addEventListener("click", evt => {
       output.innerHTML += "Auf den <b>Root-Element</b> wurde geklickt.<br>";

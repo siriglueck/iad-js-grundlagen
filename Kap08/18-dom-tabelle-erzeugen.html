@@ -10,32 +10,37 @@
   <script>
     function tabelleErzeugen() {
       // 1. HTML-Element table erzeugen
-
+      const tabelle = document.createElement("table");
 
       // 2. äußere Schleife für die Zeilen
+      const numberRows = 3;
+      for( let z = 1; z <= numberRows; z++ ) {
 
-      // 3. HTML-Element für die Zeile erzeugen
+        // 3. HTML-Element für die Zeile erzeugen
+        const zeile = document.createElement("tr");
 
+        // 4. innere Schleife für die Zellen (Spalten)
+        const numberCols = 5;
+        for( let s = 1; s <= numberCols; s++ ) {
+          // 5. Text-Knoten für den Zelleninhalt erzeugen
+          const text = document.createTextNode("Zelle " + z + "/" + s);
 
-      // 4. innere Schleife für die Zellen (Spalten)
+          // 6. HTML-Knoten für die Zelle erzeugen
+          const zelle = document.createElement("td");
 
-      // 5. Text-Knoten für den Zelleninhalt erzeugen
+          // 7. Text-Knoten in die HTML-Knoten einbetten
+          zelle.appendChild(text);
 
+          // 8. HTML-Knoten der Zelle an den HTML-Knoten der Zeile anhängen
+          zeile.appendChild(zelle);
+        }
 
-      // 6. HTML-Knoten für die Zelle erzeugen
-
-
-      // 7. Text-Knoten in die HTML-Knoten einbetten
-
-
-      // 8. HTML-Knoten der Zelle an den HTML-Knoten der Zeile anhängen
-
-
-
-      // 9. HTML-Knoten der Zeile an den HTML-Knoten der Tabelle anhängen
-
+        // 9. HTML-Knoten der Zeile an den HTML-Knoten der Tabelle anhängen
+        tabelle.appendChild(zeile);
+      }
 
       // 10. HTML-Knoten der Tabelle an den HTML-Knoten body anhängen
+      document.querySelector("body").appendChild(tabelle);
     }
   </script>
 </head>

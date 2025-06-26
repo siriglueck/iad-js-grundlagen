@@ -34,15 +34,15 @@
     const abs1 = document.getElementsByTagName("p");
     const abs2 = document.querySelectorAll("p");
 
-    console.log(abs1);
-    console.log(abs2);
+    // console.log(abs1);
+    // console.log(abs2);
 
     let ausgabe = "";
 
     for (let i = 0; i < abs2.length; i++) {
-      ausgabe += "Inhalt: " + abs2[i].firstChild.nodeValue + "\n";
-      ausgabe += "Attribut style: " + abs2[i].getAttribute("style") + "\n";
-      ausgabe += "Eltern-Element: " + abs2[i].parentElement.getAttribute("id") + "\n\n";
+      ausgabe += "Inhalt: " + abs1[i].firstChild.nodeValue + "\n";
+      ausgabe += "Attribut style: " + abs1[i].getAttribute("style") + "\n";
+      ausgabe += "Eltern-Element: " + abs1[i].parentElement.getAttribute("id") + "\n\n";
     }
 
     console.log(ausgabe);
