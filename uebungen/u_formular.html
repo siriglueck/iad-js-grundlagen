@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>u_formular</title>
+</head>
+<body>
+	<h3> Übung macht Meister!</h3>
+	<form id="form1">
+		<input type="text" name="num1" id="num1"> Erste Zahl <br>
+		<input type="text" name="num2" id="num2"> Zweite Zahl <br>
+		<button type="submit"> Rechnen</button> <br>
+		<input type="text" name="result" id="ausgabe" placeholder="Geben Sie die Zahlen" disabled> Ausgabe <br>
+	</form>
+
+	<div class="meldung"></div>
+
+	<script>
+		 let form1 = document.querySelector("#form1");
+		 for (let child of form1.children) {
+  			child.style.margin = "5px";
+		}
+
+		let button = document.querySelector('button[type="submit"]');
+		let resultField = document.querySelector("#ausgabe");
+
+
+		button.addEventListener("click",  _ => {
+            event.preventDefault();
+			
+			let num1Value = document.querySelector("#num1").value;
+			let num2Value = document.querySelector("#num2").value;
+			let result = (parseInt(num1Value) + parseInt(num2Value));
+
+			let meldung = document.querySelector(".meldung");
+			
+			let check1 = isNaN(num1Value);
+			let check2 = isNaN(num2Value);
+	
+			if (check1 || check2){
+				meldung.innerHTML = "";
+				console.log(check1);
+
+				const newParagraph = document.createElement('p');
+				const newText = document.createTextNode('Not a number!');
+				meldung.append(newText);
+				meldung.style.color = "red";
+			} else {
+				resultField.setAttribute("placeholder", Math.round(result));
+			}
+		});
+
+	</script>
+</body>
+</html>
