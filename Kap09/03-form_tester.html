@@ -6,7 +6,20 @@
 	<title>Form testen</title>
 	<link rel="stylesheet" href="../css/style.min.css">
 	<script>
+		function testen(evt) {
+			let feld = document.getElementsByName("Feld")[0];
+			if( feld.value.trim() === "" ) {
+				// Standard-Ereigbnisbehandlung des Formulars deaktivieren
+				evt.preventDefault();
+				alert("Sie müssen etwas eintragen!");
+				feld.value = "";
+				feld.focus();
+			}
+		}
 
+		document.addEventListener("DOMContentLoaded", _ => {
+			document.querySelector("#formular").addEventListener("submit", testen);
+		});
 	</script>
 </head>
 

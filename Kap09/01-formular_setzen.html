@@ -17,7 +17,12 @@
   </form>
 
   <script>
+    let form = document.querySelector("#form1");
+    form.action = "test.php";
+    form.method = "post";
 
+    // sollte ein Datei-Upload integriert sein oder das Formular an einen Mail-Client gesendet werden, benötigt das form-Tag zusätzlich das Attribut enctype.
+    form.enctype = "text/plain";
   </script>
 </body>
 
