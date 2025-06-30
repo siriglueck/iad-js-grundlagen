@@ -1,0 +1,39 @@
+
+
+#playerControls {
+  margin: 50px 0;
+}
+
+#playerControls>div {
+  margin-bottom: 50px;
+}
+
+#playerControls>span {
+  position: relative;
+  font-size: 1rem;
+  margin-right: 20px;
+  background-color: #0d387f;
+  padding: 20px;
+  line-height: 0;
+  /* display: inline-block; */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+}
+
+#playerControls>span::before {
+  position: absolute;
+  top: 35px;
+  right: 11px;
+}
+
+#playerControls>span:first-of-type:before {
+  right: 5px;
+}
+
+#playerControls>span:hover {
+  cursor: pointer;
+  color: #00a2ff;
+  background-color: #050b59;
+}
