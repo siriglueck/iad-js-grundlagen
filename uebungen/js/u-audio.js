@@ -1,5 +1,6 @@
 
-
+// Download audio datei unter diesem Link
+//  https://kurse.jaderbass.de/?page=js
 
 
 document.addEventListener("DOMContentLoaded", _ => {
@@ -12,7 +13,8 @@ document.addEventListener("DOMContentLoaded", _ => {
 	const sToend          = document.querySelector("#toend");
   	const sPlayed         = document.querySelector("#played");
 
-	// assign built-in functions to buttons
+	// console.log(oAudio);
+	// oAudio, this DOM return audio objects, therefore there are built-in functions such play() and pause() 
 	btnPlay.addEventListener("click", () => {
 		oAudio.play();
 	});
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", _ => {
     	oAudio.pause();
   	});
   	btnRewind.addEventListener("click", () => {
+		//rewind
     	oAudio.currentTime = 0;
   	});
 	
