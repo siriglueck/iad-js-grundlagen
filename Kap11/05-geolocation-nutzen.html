@@ -13,7 +13,21 @@
     <div id="pos"></div>
 
     <script>
-        
+        // Geolocation-Objekt des Browsers mit der Methode getCurrentPOsition aufrufen
+        navigator.geolocation.getCurrentPosition(function(position) {
+            console.log(position);
+            document.querySelector("#pos").innerHTML = "Latitude: " + position.coords.latitude + " / Longitude: " + position.coords.longitude;
+        }, function(e){
+            console.log(e);
+            document.querySelector("#pos").innerHTML = "Deine Position konnte leider nicht ermittelt werden";
+
+            /* 
+            Codes für GeolocationPositionError-Objekt
+            1   PERMISSION_DENIED   Der Nutzer hat die Berechtigung nicht erteilt.
+            2   POSITION_UNAVAILABLE    Erfassung der Position fehlgeschlagen
+            3   TIMOUT  Positionsinformationen wurden nicht in der erlaubten Zeit erhalten.
+            */
+        });
     </script>
 </body>
 </html>
