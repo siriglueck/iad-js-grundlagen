@@ -26,6 +26,9 @@
             // das onload-Event wird ausgelöst, sobald die Datei fertig eingelesen ist
             fileReader.onload = function(event) {
                 // Data-URL-String (in event.target.result abgerufen) wird mittels Web Storage API in das localStorage-Objekt gespeichert
+
+                console.log(event.target.result);
+                
                 localStorage.setItem("myFile", event.target.result);
             }
 
@@ -47,7 +50,7 @@
             // Content-Type anpassen (Mittelteil extrahieren, der den wirklichen Content-Type enthält)
             contentType = (fileData[0].split(":")[1].split(";")[0]);
 
-            // Instanzder Uint8Array-Klasse (Array aus 8-Bit-Ganzzahlen) erstellen ...
+            // Instanz der Uint8Array-Klasse (Array aus 8-Bit-Ganzzahlen) erstellen ...
             uInt8Array = new Uint8Array(fileAsDataUrl.length);
 
             // ... und füllen dieses Objekt
